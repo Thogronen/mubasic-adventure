@@ -19,7 +19,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Thomas Groeneweg
 
   #### Je startniveau:
-  <span style="color:blue">Blauw</span>.
+  <span style="color:blue">Blauw</span>
 
   #### Je focus:
   Responsive
@@ -40,7 +40,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   #### Screenshot(s) van de eerste pagina (small screen): 
   Hoofdpagina
-  <img src="readme-images/mubasic_main_small" width="375px" alt="Hoofdpagina">
+  <img src="readme-images/mubasic_main_small.png" width="375px" alt="Hoofdpagina">
 
   #### Screenshot(s) van de tweede pagina (small screen):
   hier de naam van de pagina  
