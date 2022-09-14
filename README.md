@@ -37,6 +37,10 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   ### Je opdracht:
   [Mubasic](https://www.mubasic.com/)
+  
+  OF
+  
+  [Hound Studio](https://hound-studio.com/) als Mubasic niet mag :)
 
   #### Screenshot(s) van de eerste pagina (small screen): 
   Hoofdpagina
