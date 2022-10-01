@@ -114,8 +114,6 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
     Minder Contrast
     <img src="images\less_contrast.png" width="375px" alt="Less Contrast">
 
-    
-
 </details>
 
 
@@ -307,7 +305,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
 
   1. [A11y Project Checklist](https://www.a11yproject.com/checklist/)
-  2. bron 2
+  2. [Emmett Cheat Sheet](https://docs.emmet.io/cheat-sheet/)
   3. ...
 
 </details>

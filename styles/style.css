@@ -1,39 +1,330 @@
-/**************/
-/* CSS REMEDY */
-/**************/
-*, *::after, *::before {
-  box-sizing:border-box;  
+/* PLEASE NO OVERLY COMPLICATED SELECTORS, WORK OUT TO IN */
+
+
+/* ------------------ */
+/* || General Styling */
+/* -------------------*/
+
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
-button, summary {
+
+button,
+summary {
 	cursor: pointer;
 }
 
-
-
-
-
-/*********************/
-/* CUSTOM PROPERTIES */
-/*********************/
-:root {
-	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
+@font-face {
+	font-family: Archivo;
+	src: url(/fonts/Archivo-var.ttf) format('truetype');
 }
 
 
+:root {
+	--color-text: #000000;
+	--color-background: #e5e7eb;
+	/* --color-accent: #f2941a; */
+	--color-accent: #614293;
+	--color-grey: #e5e7eb;
+	--color-reverse-text: #fff;
 
+	--font-base: 400;
+	--font-header: 700;
 
+	/* Easier size to work with */
+	font-size: 10px;
+}
 
-/****************/
-/* JOUW STYLING */
-/****************/
-
-/* jouw code */
 
 body {
-  color:var(--color-text);
-  background-color:var(--color-background);
+	font-size: 1.8em;
 }
 
+
+h1,
+h2,
+h3,
+h4,
+h5,
+a {
+	font-family: Archivo;
+	font-weight: 700;
+}
+
+h1 {
+	font-size: 4em;
+	font-weight: 900;
+	color: var(--color-reverse-text);
+}
+
+h2 {
+	font-size: 2em;
+	color: var(--color-reverse-text);
+}
+
+
+ul {}
+
+
+p {
+	font-family: Archivo, sans-serif;
+	font-size: 1.8em;
+	font-weight: var(--font-base);
+}
+
+
+blockquote {}
+
+
+
+/* ------------ */
+/* || Utilities */
+/* -------------*/
+
+header nav,
+footer nav,
+h1 {
+	text-transform: uppercase;
+}
+
+ul {
+	list-style: none;
+}
+
+
+.anythingThatAppliesToALot {}
+
+a {
+	color: var(--color-text);
+	/* forcing black always */
+	text-decoration: none;
+}
+
+
+
+
+
+/* ----------- */
+/* || Sitewide */
+/* ------------*/
+
+main {}
+
+
+
+header {
+	/* display */
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+
+	/* box-model */
+	height: 6rem;
+	padding: 1.8em 1.8em;
+}
+
+
+header>nav>a {
+
+	/* || Positioning */
+	padding-right: 1em;
+}
+
+
+
+footer {}
+
+
+
+
+
+/* ------------ */
+/* || Main Page */
+/* -------------*/
+
+main> :not(section:first-child) {
+	/* BOI */
+
+	/* || Positioning */
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+
+main section:first-of-type {
+	/* || Positioning */
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+
+	justify-content: center;
+
+	/* height: 100vh; */
+	width: 100vw;
+}
+
+main section:first-of-type h1 {
+	position: absolute;
+
+	/* top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%); */
+
+	/* display: flex;
+	align-items: center;
+	justify-content: center; */
+
+	align-self: center;
+}
+
+
+
+
+
+
+/* ----------- */
+/* || Projects */
+/* ----------- */
+
+main {}
+
+main section:nth-of-type(2) {
+	/* Projects */
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-gap: 1.5rem;
+
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+}
+
+main section:nth-of-type(2) article a {
+	position: relative;
+}
+
+
+main section:nth-of-type(2) article a h2 {
+	position: absolute;
+	/*  How do I move it from the corner properly?  */
+	transform: translate(1em, 1em);
+}
+
+article img {
+	/* Set w+h to 100*/
+	width: 100%;
+	height: 100%;
+
+	/* then shrink/stretch to fit */
+	object-fit: cover;
+}
+
+article:nth-child(1),
+article:nth-child(4),
+article:nth-child(5),
+article:nth-child(8) {
+	grid-column: span 5;
+	grid-row: span 1;
+}
+
+article:nth-child(2),
+article:nth-child(3),
+article:nth-child(6),
+article:nth-child(7) {
+	grid-column: span 7;
+	grid-row: span 1;
+}
+
+article:nth-last-child(1) {
+	background-color: var(--color-accent);
+	text-transform: uppercase;
+}
+
+
+
+
+
+/* ---------- */
+/* || Contact */
+/* ---------- */
+
+
+section:nth-of-type(3) {}
+
+
+section:nth-of-type(3) a {
+	font-weight: 900;
+}
+
+
+section:nth-of-type(3) span {
+	color: var(--color-accent);
+}
+
+
+
+
+
+/* --------- */
+/* || Footer */
+/* --------- */
+
+
+
+/* Media Queries */
+
+@media screen and (max-width: 450px) {
+
+	h1 {
+		font-size: 2.5em;
+	}
+
+	h2 {
+		font-size: 1.5em;
+	}
+
+	main section:nth-of-type(1) img {
+		height: 100vh;
+		object-fit: cover;
+	}
+
+	main section:nth-of-type(2) {
+		/* replace display: grid */
+		display: block;
+	}
+
+	main section:nth-of-type(2) article {
+		padding-bottom: 1em;
+	}
+
+	main section:nth-of-type(2) article a img {
+		min-height: 20em;
+	}
+}
+
+
+
+/* || Display */
+/* grid, flex */
+
+/* positioning */
+/* left, right, z-index, transform, translate */
+
+/* box-model */
+/* background, padding, margin, height, width, border */
+
+/* typography */
+/* text changes */
+
+/* manipulation */
+/* transform, filter, opacity */
+
+/* misc */
+/* border-radius, box-shadow */
