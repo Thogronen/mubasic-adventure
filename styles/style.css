@@ -30,7 +30,8 @@ summary {
 	--color-text: #000000;
 	--color-background: #e5e7eb;
 	/* --color-accent: #f2941a; */
-	--color-accent: #614293;
+	--color-accent-dark: hsl(260, 38%, 42%);
+	--color-accent-light: hsl(260, 38%, 90%);
 	--color-grey: #e5e7eb;
 	--color-reverse-text: #fff;
 
@@ -53,7 +54,7 @@ h3,
 h4,
 h5,
 a {
-	font-family: Archivo;
+	font-family: Archivo, sans-serif;
 	font-weight: 700;
 }
 
@@ -139,8 +140,6 @@ header>nav>a {
 
 
 
-footer {}
-
 
 
 
@@ -149,12 +148,13 @@ footer {}
 /* || Main Page */
 /* -------------*/
 
-main> :not(section:first-child) {
+main> :not(section:first-child),
+footer {
 	/* BOI */
 
 	/* || Positioning */
-	padding-left: 1em;
-	padding-right: 1em;
+	padding-left: 6rem;
+	padding-right: 6rem;
 }
 
 
@@ -214,7 +214,7 @@ main section:nth-of-type(2) article a {
 main section:nth-of-type(2) article a h2 {
 	position: absolute;
 	/*  How do I move it from the corner properly?  */
-	transform: translate(1em, 1em);
+	transform: translate(0.5em, 0.5em);
 }
 
 article img {
@@ -243,7 +243,7 @@ article:nth-child(7) {
 }
 
 article:nth-last-child(1) {
-	background-color: var(--color-accent);
+	background-color: var(--color-accent-dark);
 	text-transform: uppercase;
 }
 
@@ -256,16 +256,25 @@ article:nth-last-child(1) {
 /* ---------- */
 
 
-section:nth-of-type(3) {}
-
-
 section:nth-of-type(3) a {
-	font-weight: 900;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+
+	padding-bottom: 5em;
+	padding-top: 5em;
+}
+
+
+section:nth-of-type(3) a p {
+	font-size: 4em;
+	font-variation-settings: "wdth" 100, "wght" 900;
 }
 
 
 section:nth-of-type(3) span {
-	color: var(--color-accent);
+	color: var(--color-accent-dark);
 }
 
 
@@ -275,6 +284,42 @@ section:nth-of-type(3) span {
 /* --------- */
 /* || Footer */
 /* --------- */
+
+
+footer {
+	background-color: var(--color-accent-light);
+	background-color: hsl(260, 28%, 90%);
+}
+
+footer>section {
+	padding: 2rem;
+}
+
+
+footer section:first-of-type a,
+footer section:first-of-type address,
+footer section:first-of-type p {
+	font-variation-settings: "wdth" 100, "wght" 100;
+	font-weight: 100;
+
+	font-family: Archivo, sans-serif;
+	font-size: 1em;
+	font-style: normal;
+}
+
+footer section:first-of-type {
+	display: grid;
+
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -288,6 +333,15 @@ section:nth-of-type(3) span {
 
 	h2 {
 		font-size: 1.5em;
+	}
+
+	main> :not(section:first-child),
+	footer {
+		/* BOI */
+
+		/* || Positioning */
+		padding-left: 1.8em;
+		padding-right: 1.8em;
 	}
 
 	main section:nth-of-type(1) img {
@@ -304,8 +358,13 @@ section:nth-of-type(3) span {
 		padding-bottom: 1em;
 	}
 
-	main section:nth-of-type(2) article a img {
+	main section:nth-of-type(2) article a img,
+	main section:nth-of-type(2) article a svg {
 		min-height: 20em;
+	}
+
+	section:nth-of-type(3) a p {
+		font-size: 3em;
 	}
 }
 
