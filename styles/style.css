@@ -38,6 +38,8 @@ summary {
 	--font-base: 400;
 	--font-header: 700;
 
+	--default-font-var: "wgth" 400;
+
 	/* Easier size to work with */
 	font-size: 10px;
 }
@@ -59,7 +61,7 @@ a {
 }
 
 h1 {
-	font-size: 4em;
+	font-size: 3em;
 	font-weight: 900;
 	color: var(--color-reverse-text);
 }
@@ -70,7 +72,7 @@ h2 {
 }
 
 
-ul {}
+/* ul {} */
 
 
 p {
@@ -80,7 +82,11 @@ p {
 }
 
 
-blockquote {}
+hr {
+	height: 1px;
+	color: var(--color-text);
+	border-top: 3px black solid;
+}
 
 
 
@@ -99,7 +105,7 @@ ul {
 }
 
 
-.anythingThatAppliesToALot {}
+/* .anythingThatAppliesToALot {} */
 
 a {
 	color: var(--color-text);
@@ -167,8 +173,8 @@ main section:first-of-type {
 
 	justify-content: center;
 
-	/* height: 100vh; */
-	width: 100vw;
+	/* Suppose this isn't necessary */
+	/* width: 100vw; */
 }
 
 main section:first-of-type h1 {
@@ -183,6 +189,10 @@ main section:first-of-type h1 {
 	justify-content: center; */
 
 	align-self: center;
+
+	font-variation-settings: "wdth" 100, "wght" 700;
+	/* temp */
+	max-width: 70%;
 }
 
 
@@ -194,7 +204,6 @@ main section:first-of-type h1 {
 /* || Projects */
 /* ----------- */
 
-main {}
 
 main section:nth-of-type(2) {
 	/* Projects */
@@ -292,26 +301,90 @@ footer {
 }
 
 footer>section {
-	padding: 2rem;
+	padding-top: 2em;
+	padding-bottom: 2em;
+}
+
+footer hr {
+	/* inset: 5rem; */
+	margin-top: 3rem;
+	margin-bottom: 3rem;
 }
 
 
-footer section:first-of-type a,
-footer section:first-of-type address,
+footer section nav {
+	display: flex;
+	flex-direction: row;
+	gap: 2rem;
+	flex-wrap: wrap;
+}
+
+footer section section nav {
+	flex-direction: row-reverse;
+
+}
+
+footer section:last-of-type section {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	gap: 3em;
+}
+
+/* footer section section>* {
+	max-width: 50%;
+} */
+
+
+
+footer>section:first-of-type {
+	/* background-color: greenyellow; */
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+footer>section:first-of-type ul {
+	display: flex;
+	flex-direction: column;
+
+}
+
+footer>section:first-of-type ul:last-child {
+	display: flex;
+	flex-direction: column;
+}
+
+footer>section:first-of-type ul:last-child li {
+	display: flex;
+	flex-direction: row;
+	align-self: flex-end;
+}
+
+
+footer>section:first-of-type ul li {
+	padding-top: 1rem;
+}
+
+footer>section:first-of-type *,
 footer section:first-of-type p {
+	/* Contact Info */
 	font-variation-settings: "wdth" 100, "wght" 100;
 	font-weight: 100;
 
 	font-family: Archivo, sans-serif;
 	font-size: 1em;
+
+	/* undo the default styling */
 	font-style: normal;
 }
 
-footer section:first-of-type {
-	display: grid;
 
+footer section:first-of-type>p {
+	/* Copyright */
+	font-variation-settings: var(--default-font-var);
+	align-self: flex-end;
 }
-
 
 
 
@@ -365,6 +438,10 @@ footer section:first-of-type {
 
 	section:nth-of-type(3) a p {
 		font-size: 3em;
+	}
+
+	section:nth-of-type(3) a p {
+		font-size: 2em;
 	}
 }
 
