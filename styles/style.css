@@ -23,6 +23,8 @@ summary {
 @font-face {
 	font-family: 'Archivo';
 	src: url(/fonts/Archivo-var.ttf) format('truetype');
+	font-style: normal;
+	font-weight: 100 900;
 }
 
 
@@ -160,6 +162,7 @@ nav {
 
 button {
 	border: none;
+	z-index: 20;
 
 }
 
@@ -169,7 +172,7 @@ button {
 }
 
 .scrollLock {
-	overflow-y: hidden;
+	overflow: hidden;
 }
 
 
@@ -207,7 +210,7 @@ main section:first-of-type {
 
 main section:first-of-type h1 {
 	position: absolute;
-	font-variation-settings: "wght" 700;
+	font-variation-settings: "wght" 900;
 
 	padding-left: 1em;
 	padding-right: 1em;
@@ -234,7 +237,18 @@ main section:nth-of-type(2) {
 }
 
 main section:nth-of-type(2) article a {
-	position: relative;
+	/* position: relative;
+	width: 100%;
+	height: 100%; */
+}
+
+main section:nth-of-type(2) article a {
+	/* display: block; */
+	/* height: 50%;
+	width: 50%; */
+	/* background-color: hotpink; */
+
+	/* Whoops! Gotta fix the a area! */
 }
 
 
@@ -242,6 +256,7 @@ main section:nth-of-type(2) article a h2 {
 	position: absolute;
 	/*  How do I move it from the corner properly?  */
 	transform: translate(0.5em, 0.5em);
+
 }
 
 article img {
@@ -256,7 +271,7 @@ article img {
 article:nth-child(1),
 article:nth-child(4),
 article:nth-child(5),
-article:nth-child(8) {
+article:last-child {
 	grid-column: span 5;
 	grid-row: span 1;
 }
@@ -381,22 +396,23 @@ footer>section:first-of-type ul li *,
 footer>section:last-of-type p {
 	/* Contact Info */
 
-	/* Hello? */
-	font-variation-settings: "wght" 100;
-	font-weight: 100;
-	font-size: 1em;
-
 	/* undo the default styling */
+	font-size: 1em;
 	font-family: Archivo, sans-serif;
 	font-style: normal;
 }
 
+footer>section:first-of-type ul li * {
+	font-variation-settings: "wght" 100;
+	font-weight: 100;
+}
 
 
-footer section:first-of-type>p {
+footer>section>section:last-of-type>p {
 	/* Copyright */
 	font-variation-settings: var(--default-font-var);
 	align-self: flex-end;
+
 }
 
 
@@ -454,23 +470,3 @@ footer section:first-of-type>p {
 	}
 
 }
-
-
-
-/* || Display */
-/* grid, flex */
-
-/* positioning */
-/* left, right, z-index, transform, translate */
-
-/* box-model */
-/* background, padding, margin, height, width, border */
-
-/* typography */
-/* text changes */
-
-/* manipulation */
-/* transform, filter, opacity */
-
-/* misc */
-/* border-radius, box-shadow */
