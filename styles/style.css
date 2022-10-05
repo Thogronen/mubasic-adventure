@@ -38,7 +38,7 @@ summary {
 	--color-reverse-text: #fff;
 
 	--font-base: 400;
-	--font-header: 700;
+	--font-header: 900;
 
 	--default-font-var: "wgth" 400;
 
@@ -312,6 +312,7 @@ section:nth-of-type(3) a {
 section:nth-of-type(3) a p {
 	font-size: 3em;
 	font-variation-settings: "wght" 900;
+	font-weight: var(--font-header);
 }
 
 
@@ -427,7 +428,7 @@ footer>section>section:last-of-type>p {
 
 /* Media Queries */
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 650px) {
 
 	h1 {
 		font-size: 2.5em;
