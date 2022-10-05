@@ -175,9 +175,21 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   <summary>uitwerken voor 2e voortgang</summary>
 
   ### Stand van zaken
-  hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+  Goed:
 
+   - Het maken van de grids/flexbox
+   - Begonnen met een beetje media queries (mag @container?)
 
+  Lastig:
+
+  - Het linken van scripts (silly me)
+  - Bepalen welke elementen zou wel/niet gestijld moeten worden soms
+  - Zorgen dat alles niet alleen werkt in VS maar ook live :(
+
+  Nog te doen:
+
+  - Checken voor Accessibility
+- 
   ### Agenda voor meeting
   samen met je groepje opstellen
 
