@@ -21,7 +21,7 @@ summary {
 }
 
 @font-face {
-	font-family: Archivo;
+	font-family: 'Archivo';
 	src: url(/fonts/Archivo-var.ttf) format('truetype');
 }
 
@@ -56,7 +56,7 @@ h3,
 h4,
 h5,
 a {
-	font-family: Archivo, sans-serif;
+	font-family: 'Archivo', sans-serif;
 	font-weight: 700;
 }
 
@@ -94,6 +94,8 @@ hr {
 /* || Utilities */
 /* -------------*/
 
+/* .anythingThatAppliesToALot {} */
+
 header nav,
 footer nav,
 h1 {
@@ -103,9 +105,6 @@ h1 {
 ul {
 	list-style: none;
 }
-
-
-/* .anythingThatAppliesToALot {} */
 
 a {
 	color: var(--color-text);
@@ -149,6 +148,34 @@ header>nav>a {
 
 
 
+/* ------------- */
+/* || Navigation */
+/* ------------- */
+
+/* only mobile/tablet sizes */
+nav {
+	/* only show when screen gets above ? px */
+	display: none;
+}
+
+button {
+	border: none;
+
+}
+
+.menuContent {
+	/* nav is a block element */
+	display: block;
+}
+
+.scrollLock {
+	overflow-y: hidden;
+}
+
+
+
+
+
 
 /* ------------ */
 /* || Main Page */
@@ -156,7 +183,8 @@ header>nav>a {
 
 main> :not(section:first-child),
 footer {
-	/* BOI */
+
+	/* ... */
 
 	/* || Positioning */
 	padding-left: 6rem;
@@ -170,29 +198,19 @@ main section:first-of-type {
 
 	display: flex;
 	flex-direction: column;
-
 	justify-content: center;
 
-	/* Suppose this isn't necessary */
-	/* width: 100vw; */
+	text-align: center;
+	width: 100%;
+
 }
 
 main section:first-of-type h1 {
 	position: absolute;
+	font-variation-settings: "wght" 700;
 
-	/* top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%); */
-
-	/* display: flex;
-	align-items: center;
-	justify-content: center; */
-
-	align-self: center;
-
-	font-variation-settings: "wdth" 100, "wght" 700;
-	/* temp */
-	max-width: 70%;
+	padding-left: 1em;
+	padding-right: 1em;
 }
 
 
@@ -277,8 +295,8 @@ section:nth-of-type(3) a {
 
 
 section:nth-of-type(3) a p {
-	font-size: 4em;
-	font-variation-settings: "wdth" 100, "wght" 900;
+	font-size: 3em;
+	font-variation-settings: "wght" 900;
 }
 
 
@@ -331,14 +349,7 @@ footer section:last-of-type section {
 	gap: 3em;
 }
 
-/* footer section section>* {
-	max-width: 50%;
-} */
-
-
-
 footer>section:first-of-type {
-	/* background-color: greenyellow; */
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -366,18 +377,20 @@ footer>section:first-of-type ul li {
 	padding-top: 1rem;
 }
 
-footer>section:first-of-type *,
-footer section:first-of-type p {
+footer>section:first-of-type ul li *,
+footer>section:last-of-type p {
 	/* Contact Info */
-	font-variation-settings: "wdth" 100, "wght" 100;
-	font-weight: 100;
 
-	font-family: Archivo, sans-serif;
+	/* Hello? */
+	font-variation-settings: "wght" 100;
+	font-weight: 100;
 	font-size: 1em;
 
 	/* undo the default styling */
+	font-family: Archivo, sans-serif;
 	font-style: normal;
 }
+
 
 
 footer section:first-of-type>p {
@@ -437,12 +450,9 @@ footer section:first-of-type>p {
 	}
 
 	section:nth-of-type(3) a p {
-		font-size: 3em;
-	}
-
-	section:nth-of-type(3) a p {
 		font-size: 2em;
 	}
+
 }
 
 
