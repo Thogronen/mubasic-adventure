@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="nl">
+<html lang="en">
 
 <!-- ToDo -->
 
@@ -15,12 +15,23 @@
 
  -->
 
+
+<!-- Changelog -->
+
+<!-- 
+	> Added invisisible H1 [x]
+	> Changed Banner text to H2 [x]
+	> Made lists to group projects in section Projects [x]
+	> Changed list headers from H2 to H3 [x]
+	> Changed Section 5 to use lists for nav [x]
+  -->
+
 <head>
 	<meta charset="UTF-8">
-	<meta name="author" content="jouw naam">
+	<meta name="author" content="Thomas">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>HOUND Studio Animations</title>
+	<title>HOUND Studio Animations - Home</title>
 
 	<link href="styles/style.css" rel="stylesheet">
 	<link rel="icon" type="image/svg+xml" href="images/hound-logo.webp">
@@ -43,73 +54,99 @@
 		</button>
 
 		<nav>
-			<a href="">Process</a>
-			<a href="">Blog</a>
-			<a href="">About</a>
-			<a href="">Get a quote</a>
+			<!-- <ul>
+				<li></li> -->
+			<a href="#">Process</a>
+			<a href="#">Blog</a>
+			<a href="#">About</a>
+			<a href="#">Get a quote</a>
+			<!-- </ul> -->
 		</nav>
 	</header>
 
 	<main>
 
+		<h1 class="visually-hidden"> Hound Studio - 2D/3D animation & video production </h1>
+
 		<section>
 			<!-- section 1 - imagery + banner  -->
+
+
 			<h1>We will open your mind</h1>
 			<img src="img-temp/HS-Joshs-Story-01-1.webp" alt="josh in black and white">
 
 		</section>
 
 		<section>
+			<h2 class="visually-hidden">Projecten</h2>
 			<!-- section 2 - projects -->
-			<article>
-				<a href="josh-story.html">
-					<h2>Josh's story</h2>
-					<img src="img-temp/HS-Joshs-Story-24.webp" alt="the forest">
-				</a>
-			</article>
 
-			<article>
-				<a href="">
-					<h2>Eternity</h2>
-					<img src="img-temp/3.webp" alt="something">
-				</a>
-			</article>
-			<article>
-				<a href="">
-					<h2>Orchestra</h2>
-					<img src="img-temp/hound-orchestra-featured-e1651492982247-1536x847.webp" alt="Orchestra">
-				</a>
-			</article>
-			<article>
-				<a href="">
-					<h2>Venray</h2>
-					<img src="img-temp/venray_featured.webp" alt="something">
-				</a>
-			</article>
-			<article>
-				<a href="">
-					<h2>Global Music Vault</h2>
-					<img src="img-temp/cover-global-music-vault-1536x448.webp" alt="something">
-				</a>
-			</article>
-			<article>
-				<a href="">
-					<h2>Outdoor Clothing Brand</h2>
-					<img src="img-temp/Hound-Outdoor-Clothing-Brand-1.webp" alt="something">
-				</a>
-			</article>
-			<article>
-				<a href="">
-					<h2>Krock.io</h2>
-					<img src="img-temp/crock_io.webp" alt="something">
-				</a>
-			</article>
-			<article>
-				<a href="">
-					<h2>More Projects</h2>
-					<svg></svg>
-				</a>
-			</article>
+			<ul>
+				<li>
+					<article>
+						<a href="josh-story.html">
+							<h3>Josh's story</h3>
+							<img src="img-temp/HS-Joshs-Story-24.webp" alt="the forest">
+						</a>
+					</article>
+				</li>
+				<li>
+					<article>
+						<a href="#">
+							<h3>Eternity</h3>
+							<img src="img-temp/3.webp" alt="something">
+						</a>
+					</article>
+				</li>
+				<li>
+					<article>
+						<a href="#">
+							<h3>Orchestra</h3>
+							<img src="img-temp/hound-orchestra-featured-e1651492982247-1536x847.webp" alt="Orchestra">
+						</a>
+					</article>
+				</li>
+				<li>
+					<article>
+						<a href="#">
+							<h3>Venray</h3>
+							<img src="img-temp/venray_featured.webp" alt="something">
+						</a>
+					</article>
+				</li>
+				<li>
+					<article>
+						<a href="#">
+							<h3>Global Music Vault</h3>
+							<img src="img-temp/cover-global-music-vault-1536x448.webp" alt="something">
+						</a>
+					</article>
+				</li>
+				<li>
+					<article>
+						<a href="#">
+							<h3>Outdoor Clothing Brand</h3>
+							<img src="img-temp/Hound-Outdoor-Clothing-Brand-1.webp" alt="something">
+						</a>
+					</article>
+				</li>
+				<li>
+					<article>
+						<a href="#">
+							<h3>Krock.io</h3>
+							<img src="img-temp/crock_io.webp" alt="something">
+						</a>
+					</article>
+				</li>
+				<li>
+					<article>
+						<a href="#">
+							<h3>More Projects</h3>
+							<svg></svg>
+						</a>
+					</article>
+				</li>
+			</ul>
 		</section>
 
 
@@ -133,7 +170,7 @@
 					<a href="">Book a call</a>
 				</li>
 				<li>
-					<address>hello@hound-studio.com</adress>
+					<adress><a href="mailto:hello@hound-studio.com">hello@hound-studio.com</a></adress>
 				</li>
 			</ul>
 
@@ -153,10 +190,20 @@
 		<section>
 			<!-- Section 5 - Categories -->
 			<nav>
-				<a href="">2D Animation</a>
-				<a href="">3D-Animation</a>
-				<a href="">Frame-by-Frame</a>
-				<a href="">Chronomer</a>
+				<ul>
+					<li>
+						<a href="">2D Animation</a>
+					</li>
+					<li>
+						<a href="">3D-Animation</a>
+					</li>
+					<li>
+						<a href="">Frame-by-Frame</a>
+					</li>
+					<li>
+						<a href="">Chronomer</a>
+					</li>
+				</ul>
 			</nav>
 
 			<hr>
@@ -166,12 +213,14 @@
 				<p>Copy @ 2022 Thomas Groeneweg. All rights reserved.</p>
 				<!-- Socials -->
 				<nav>
-					<a href="">Vimeo</a>
-					<a href="">Instg</a>
-					<a href="">Drbl</a>
-					<a href="">Fb</a>
-					<a href="">Yt</a>
-					<a href="">Be</a>
+					<ul>
+						<li><a href="#">Vimeo</a></li>
+						<li><a href="#">Instg</a></li>
+						<li><a href="#">Drbl</a></li>
+						<li><a href="#">Fb</a></li>
+						<li><a href="#">Yt</a></li>
+						<li><a href="#">Be</a></li>
+					</ul>
 				</nav>
 			</section>
 		</section>
