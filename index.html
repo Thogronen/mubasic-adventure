@@ -19,6 +19,7 @@
 <!-- Changelog -->
 
 <!-- 
+	>> 12/10/22 <<
 
 	> Added invisisible H1 [x]
 	> Changed Banner text to H2 [x]
@@ -26,6 +27,21 @@
 	> Changed list headers from H2 to H3 [x]
 	> Changed Section 5 to use lists for nav [x]
 
+	---
+
+	>> 13/12/22 <<
+
+	> Added list to main menu (whoops!) [x]
+	> Changed banner text from H1 to H2 [x]
+	> Fixed small screen menu animation [x]
+
+
+	>> TODO <<
+	> Add two more menu items on small screen menu (js?)
+	> Fix menu at top, or at least scroll back in on upScroll (js)
+	> Rotating set of background-images for the first section (Done, but not great)
+	> Menu button animation
+	
   -->
 
 <head>
@@ -47,7 +63,7 @@
 	<header>
 		<a href="index.html">logo-temp</a>
 
-		<button>
+		<button aria-label="Main Menu">
 			<!-- menu toggle -->
 			<i class="fa-solid fa-bars fa-xl"></i>
 			<!-- <span class="top"></span>
@@ -56,13 +72,12 @@
 		</button>
 
 		<nav>
-			<!-- <ul>
-				<li></li> -->
-			<a href="#">Process</a>
-			<a href="#">Blog</a>
-			<a href="#">About</a>
-			<a href="#">Get a quote</a>
-			<!-- </ul> -->
+			<ul>
+				<li><a href="A">Process</a></li>
+				<li><a href="#">Blog</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Get a quote</a></li>
+			</ul>
 		</nav>
 	</header>
 
@@ -74,8 +89,8 @@
 			<!-- section 1 - imagery + banner  -->
 
 
-			<h1>We will open your mind</h1>
-			<img src="img-temp/HS-Joshs-Story-01-1.webp" alt="josh in black and white">
+			<h2>We will open your mind</h2>
+			<!-- <img src="img-temp/HS-Joshs-Story-01-1.webp" alt="josh in black and white"> -->
 
 		</section>
 

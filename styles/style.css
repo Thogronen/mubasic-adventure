@@ -37,6 +37,9 @@ summary {
 	--color-grey: #e5e7eb;
 	--color-reverse-text: #fff;
 
+	/* wip color */
+	--color-wip: hsla(74, 100%, 50%, 1);
+
 	--font-base: 400;
 	--font-header: 900;
 
@@ -62,7 +65,7 @@ a {
 	font-weight: 700;
 }
 
-h1 {
+h2:first-of-type {
 	font-size: 3em;
 	font-weight: 900;
 	color: var(--color-reverse-text);
@@ -100,7 +103,7 @@ hr {
 
 header nav,
 footer nav,
-h1 {
+h2:first-of-type {
 	text-transform: uppercase;
 }
 
@@ -132,10 +135,6 @@ a {
 /* || Sitewide */
 /* ------------*/
 
-main {}
-
-
-
 header {
 	/* display */
 	display: flex;
@@ -148,11 +147,15 @@ header {
 	padding: 1.8em 1.8em;
 }
 
+header nav ul {
+	display: flex;
+	z-index: -1;
 
-header>nav>a {
+}
 
+nav ul a {
 	/* || Positioning */
-	padding-right: 1em;
+	margin-right: 1em;
 }
 
 
@@ -176,12 +179,12 @@ button {
 }
 
 .menuContent {
-	/* nav is a block element */
-	display: block;
+	/* make visible */
+	opacity: 1;
 }
 
-.scrollLock {
-	overflow: hidden;
+.noScroll {
+	overflow-y: hidden;
 }
 
 
@@ -204,6 +207,37 @@ footer {
 }
 
 
+/* || Slideshow */
+
+@keyframes showcaseImages {
+	0% {
+		background-image: url("/img-temp/HS-Joshs-Story-01-1.webp");
+		/* background-color: rebeccapurple; */
+	}
+
+	25% {
+		background-image: url("/img-temp/HS-Joshs-Story-08.webp");
+		/* background-color: palegoldenrod; */
+	}
+
+	50% {
+		background-image: url("/img-temp/HS-Joshs-Story-11.webp");
+		/* background-color: teal; */
+	}
+
+	75% {
+		background-image: url("/img-temp/HS-Joshs-Story-22.webp");
+		/* background-color: honeydew; */
+	}
+
+	100% {
+		background-image: url("/img-temp/HS-Joshs-Story-01-1.webp");
+		/* background-color: orange; */
+	}
+
+	/* 1/8/11/22 */
+}
+
 main section:first-of-type {
 	/* || Positioning */
 	position: relative;
@@ -215,15 +249,32 @@ main section:first-of-type {
 	text-align: center;
 	width: 100%;
 
+	/* background-image: url("/img-temp/HS-Joshs-Story-04.webp"); */
+
+	animation-name: showcaseImages;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	/* animation-timing-function: steps(4); */
+
+	/* background-image testing */
+
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+
 }
 
-main section:first-of-type h1 {
+main section:first-of-type h2 {
 	position: absolute;
 	font-variation-settings: "wght" 900;
 
 	left: 1em;
 	right: 1em;
 }
+
+
+
+
 
 
 
@@ -474,10 +525,14 @@ footer>section>section:last-of-type>p {
 		padding-right: 1.8em;
 	}
 
-	main section:nth-of-type(1) img {
+	main section:nth-of-type(1) img,
+	main section:nth-of-type(1) {
 		height: 100vh;
 		object-fit: cover;
 	}
+
+	/* temp */
+
 
 	main section:nth-of-type(2) ul {
 		/* replace display: grid */
@@ -502,6 +557,7 @@ footer>section>section:last-of-type>p {
 	header nav {
 		/* hide normal nav on small screens */
 		display: none;
+		opacity: 0;
 	}
 
 	header button {
@@ -509,13 +565,52 @@ footer>section>section:last-of-type>p {
 		display: block;
 	}
 
-	header nav {
-		position: absolute;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+
+	/* || Nav */
+
+	header button {
+		z-index: 101;
 	}
 
+	header nav {
+		position: fixed;
+
+		display: flex;
+		/* Vertical */
+		align-items: center;
+		/* Horizontal */
+		justify-content: center;
+		background-color: var(--color-accent-dark);
+
+
+		/* fill entire screen */
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+
+		/* z-index */
+		z-index: 100;
+
+		/* animation */
+		transition-duration: 0.5s;
+	}
+
+	header>nav ul {
+		/* why do I need the > ? */
+		display: flex;
+		flex-direction: column;
+
+		align-items: center;
+
+		gap: 1em;
+		font-variation-settings: "wght" 900;
+		font-size: 1.8em;
+	}
+
+	header nav ul a {
+		color: var(--color-reverse-text);
+	}
 
 
 
@@ -527,3 +622,4 @@ footer>section>section:last-of-type>p {
 		flex-wrap: wrap;
 		min-height: 50em; */
 	}
+}

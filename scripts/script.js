@@ -1,5 +1,5 @@
 // JavaScript Document
-console.log("You spooked me!");
+console.log("This website is a copy of hound-studio.com as part of an assignment. All rights go to the original owner.");
 
 // var voor menu knop
 // var menuBtn = document.querySelector('button');
@@ -7,7 +7,7 @@ var button = document.querySelector('button');
 
 // de content van het menu (div)
 // var navToggle = document.querySelector("nav");
-var element = document.querySelector("nav");
+var navBtn = document.querySelector("nav");
 
 // var voor body
 var scrollLock = document.querySelector("body");
@@ -25,6 +25,21 @@ function toggleMenu() {
 
     // toggle: menuContent will make the contents of the menu visible.
     // add .menuContent to nav
-    // navToggle.classList.toggle("menuContent");
-    element.classList.toggle("menuContent");
+    navBtn.classList.toggle("menuContent");
+}
+
+
+
+
+
+
+var button = document.querySelector('button');
+var navBtn = document.querySelector("nav");
+var scrollLock = document.querySelector("body");
+
+button.addEventListener("click", toggleMenu);
+
+function toggleMenu() {
+    scrollLock.classList.toggle("noScroll");
+    navBtn.classList.toggle("menuContent");
 }
