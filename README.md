@@ -299,5 +299,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   1. [A11y Project Checklist](https://www.a11yproject.com/checklist/)
   2. [Emmett Cheat Sheet](https://docs.emmet.io/cheat-sheet/)
   3. [FontAwesome Icons and Sizing](https://fontawesome.com/docs/web/style/size)
+  4. [Mozilla Docs insertAdjText](https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentText)
+  5. [FontAwesome Animating Icons](https://fontawesome.com/docs/web/style/animate)
 
 </details>

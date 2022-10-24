@@ -43,3 +43,7 @@ function toggleMenu() {
     scrollLock.classList.toggle("noScroll");
     navBtn.classList.toggle("menuContent");
 }
+
+
+document.getQuerySelector("nav ul").insertAdjacentHTML("beforebegin", begin);
+document.getQuerySelector("nav ul").insertAdjacentHTML("beforeend", end);

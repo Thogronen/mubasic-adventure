@@ -128,6 +128,9 @@ a {
 	width: 1px;
 }
 
+.arrow-down {
+	fill: var(--color-background);
+}
 
 
 
@@ -135,17 +138,47 @@ a {
 /* || Sitewide */
 /* ------------*/
 
+body div:first-of-type {
+	position: sticky;
+	top: 0;
+	z-index: 10000;
+}
+
 header {
-	/* display */
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
+	background-color: var(--color-background);
+
+	position: sticky;
+	top: 0;
+
+	height: 5rem;
+
+}
+
+header div {
+	/* display */
+	display: flex;
 	justify-content: space-between;
 	align-items: center;
-
-	/* box-model */
-	height: 6rem;
-	padding: 1.8em 1.8em;
+	align-content: center;
+	/* background-color: green; */
+	width: 100%;
+	height: 100%;
 }
+
+header div>a,
+header div>a:first-of-type img {
+	height: 100%;
+}
+
+header div>a:first-of-type img {
+	transform: scale(2);
+	/* I guess. */
+
+}
+
 
 header nav ul {
 	display: flex;
@@ -192,10 +225,11 @@ button {
 
 
 
+
 /* ------------ */
 /* || Main Page */
 /* -------------*/
-
+header>div,
 main> :not(section:first-of-type),
 footer {
 
@@ -209,34 +243,7 @@ footer {
 
 /* || Slideshow */
 
-@keyframes showcaseImages {
-	0% {
-		background-image: url("/img-temp/HS-Joshs-Story-01-1.webp");
-		/* background-color: rebeccapurple; */
-	}
 
-	25% {
-		background-image: url("/img-temp/HS-Joshs-Story-08.webp");
-		/* background-color: palegoldenrod; */
-	}
-
-	50% {
-		background-image: url("/img-temp/HS-Joshs-Story-11.webp");
-		/* background-color: teal; */
-	}
-
-	75% {
-		background-image: url("/img-temp/HS-Joshs-Story-22.webp");
-		/* background-color: honeydew; */
-	}
-
-	100% {
-		background-image: url("/img-temp/HS-Joshs-Story-01-1.webp");
-		/* background-color: orange; */
-	}
-
-	/* 1/8/11/22 */
-}
 
 main section:first-of-type {
 	/* || Positioning */
@@ -247,14 +254,9 @@ main section:first-of-type {
 	justify-content: center;
 
 	text-align: center;
+	/* container */
 	width: 100%;
-
-	/* background-image: url("/img-temp/HS-Joshs-Story-04.webp"); */
-
-	animation-name: showcaseImages;
-	animation-duration: 4s;
-	animation-iteration-count: infinite;
-	/* animation-timing-function: steps(4); */
+	height: calc(100vh - 5rem);
 
 	/* background-image testing */
 
@@ -264,12 +266,31 @@ main section:first-of-type {
 
 }
 
+main section:first-of-type .arrow-down {
+	/* so why is this not a flex item? */
+	position: absolute;
+	height: 2em;
+	align-self: center;
+	bottom: 2em;
+}
+
+.arrow-down:hover {
+	/* ??? */
+	fill: var(--color-accent-dark);
+}
+
+main section:first-of-type video {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
 main section:first-of-type h2 {
 	position: absolute;
 	font-variation-settings: "wght" 900;
 
-	left: 1em;
-	right: 1em;
+	left: 2em;
+	right: 2em;
 }
 
 
@@ -506,7 +527,7 @@ footer>section>section:last-of-type>p {
 /* Media Queries */
 /* Ordering is in uh, order ^^'  */
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 770px) {
 
 	h1 {
 		font-size: 2.5em;
@@ -527,7 +548,7 @@ footer>section>section:last-of-type>p {
 
 	main section:nth-of-type(1) img,
 	main section:nth-of-type(1) {
-		height: 100vh;
+		height: calc(100vh - 5rem);
 		object-fit: cover;
 	}
 
