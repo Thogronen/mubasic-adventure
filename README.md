@@ -38,17 +38,17 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 #### Screenshot(s) van de eerste pagina (small screen)
 
   Hoofdpagina
-  <img src="images\HOUND-main.png" width="375px" alt="Hoofdpagina">
+  <img src="readme-images\HOUND-main.png" width="375px" alt="Hoofdpagina">
 
 #### Screenshot(s) van de tweede pagina (small screen)
 
   Josh's Adventure
-  <img src="images\JOSH-story.png" width="375px" alt="Josh's adventure">
+  <img src="readme-images\JOSH-story.png" width="375px" alt="Josh's adventure">
 
 #### Menu (small screen)
 
   Menu
-  <img src="images\HOUND-menu.png" width="375px" alt="Josh's adventure">
+  <img src="readme-images\HOUND-menu.png" width="375px" alt="Josh's adventure">
 
 </details>
 
@@ -73,7 +73,7 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
   Links zijn soms super onduidelijk - wat IS Josh' droom? Waar gaan we heen?
   Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
 
-  <img src="images/HOUND-main_breakdown.svg" width="375px" alt="breakdown van de hele pagina">
+  <img src="readme-images/HOUND-main_breakdown.svg" width="375px" alt="breakdown van de hele pagina">
 
   <img src="readme-images/wave.webaim.org_report%20(1).png" width="375px" alt="WebAim Accessibility Overview 1/3">
   <img src="readme-images/wave.webaim.org_report%20(2).png" width="375px" alt="WebAim Accessibility Overview 2/3">
@@ -121,11 +121,11 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
 ### de hele pagina
 
-  <img src="images/HOUND-main_breakdown.svg" width="375px" alt="breakdown van de hele pagina">
+  <img src="readme-images/HOUND-main_breakdown.svg" width="375px" alt="breakdown van de hele pagina">
 
 ### dynamisch deel (bijv menu)
 
-  <img src="images/HOUND-menu_breakdown.svg" width="375px" alt="breakdown van een dynamisch deel">
+  <img src="readme-images/HOUND-menu_breakdown.svg" width="375px" alt="breakdown van een dynamisch deel">
 
 </details>
 
