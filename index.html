@@ -50,12 +50,21 @@
 	> Added local link in hero section
 	> Menu now sticks to top of page
 
+	>> 26/10/22 <<
+
+	> Fixed projects resizing to full screen (needs MQ?) -- Fixed with Grid
+	> Changed a>a>svg in articles to a>svg
+	> Added hover transitions on articles
+	> Fixed some font / color issues for the articles
+
 	>> TODO <<
 
-	> Add two more menu items on small screen menu (js insertAdjacentText)
-	> Fix menu at top, or at least scroll back in on upScroll (js)
-	> Rotating set of background-images for the first section (Done, but not great)
+	> Add two more menu items on small screen menu (js insertAdjacentText?)
 	> Menu button animation
+	> Scrollbar gutter open-menu-resizing bs
+	> Clean up unnecessary CSS
+	> Check what the heck is wrong with the Global Music Vault
+	> Page 2!!!
 
   -->
 
@@ -64,7 +73,7 @@
 	<meta name="author" content="Thomas">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>FED -HOUND Studio Animations - Home</title>
+	<title>FED - HOUND Studio Animations - Home</title>
 
 	<link href="styles/style.css" rel="stylesheet">
 	<link rel="icon" type="image/svg+xml" href="images/hound-logo.webp">
@@ -98,7 +107,7 @@
 				<nav>
 					<ul>
 						<li><a href="#">Process</a></li>
-						<li><a href="#">Blog</a></li>
+						<li><a href="blog.html">Blog</a></li>
 						<li><a href="#">About</a></li>
 						<li><a href="#">Get a quote</a></li>
 					</ul>
@@ -116,7 +125,7 @@
 
 
 			<h2>We will open your mind</h2>
-			<video autoplay loop muted poster="./images/Josh_Story_1.webp">
+			<video autoplay loop muted poster="./images/Josh_Story_Animation.webp">
 				<source src="/images/Hound_Showreel.mp4" type="video/mp4">
 			</video>
 			<a href="#projects">
@@ -138,14 +147,15 @@
 					<article>
 						<a href="josh-story.html">
 							<h3>Josh's story</h3>
-							<img src="img-temp/HS-Joshs-Story-24.webp" alt="the forest">
-							<a>
-								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-									<!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-									<path
-										d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
-								</svg>
-							</a>
+							<img src="images/Josh_Story.webp"
+								alt="Josh's story: The future imagined from a childs' perspective.">
+
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+								<!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+								<path
+									d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+							</svg>
+
 						</a>
 					</article>
 				</li>
@@ -153,7 +163,15 @@
 					<article>
 						<a href="#">
 							<h3>Eternity</h3>
-							<img src="img-temp/3.webp" alt="something">
+							<img src="images/Eternity.webp"
+								alt="Eternity: a project about making engaging video content for children.">
+
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+								<!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+								<path
+									d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+							</svg>
+
 						</a>
 					</article>
 				</li>
@@ -161,39 +179,78 @@
 					<article>
 						<a href="#">
 							<h3>Orchestra</h3>
-							<img src="img-temp/hound-orchestra-featured-e1651492982247-1536x847.webp" alt="Orchestra">
+							<img src="images/Orchestra.webp"
+								alt="The story of the first New York Orchestra, anno 1972.">
+
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+								<!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+								<path
+									d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+							</svg>
 						</a>
+
 					</article>
 				</li>
 				<li>
 					<article>
 						<a href="#">
 							<h3>Venray</h3>
-							<img src="img-temp/venray_featured.webp" alt="something">
+							<img src="images/Venray.webp"
+								alt="Venray: Animated shorts about the problems and solutions the Venray muncipality offers.">
+
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+								<!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+								<path
+									d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+							</svg>
 						</a>
+
 					</article>
 				</li>
 				<li>
 					<article>
 						<a href="#">
 							<h3>Global Music Vault</h3>
-							<img src="img-temp/cover-global-music-vault-1536x448.webp" alt="something">
+							<img src="images/Global_Music_Vault.webp"
+								alt="This is the story of the creation of the Global Music Vault, a vault designed to keep the music of the ages safe.">
+
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+								<!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+								<path
+									d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+							</svg>
 						</a>
+
 					</article>
 				</li>
 				<li>
 					<article>
 						<a href="#">
 							<h3>Outdoor Clothing Brand</h3>
-							<img src="img-temp/Hound-Outdoor-Clothing-Brand-1.webp" alt="something">
+							<img src="images/Outdoor_Clothing_Brand.webp"
+								alt="Partnership with Patagonia to bring more sustainable clothing to the attention of more people.">
+
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+								<!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+								<path
+									d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+							</svg>
 						</a>
+
 					</article>
 				</li>
 				<li>
 					<article>
 						<a href="#">
 							<h3>Krock.io</h3>
-							<img src="img-temp/crock_io.webp" alt="something">
+							<img src="images/Krock_io.webp"
+								alt="Streamline your workflow and collaboration with Krock.io.">
+
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+								<!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+								<path
+									d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+							</svg>
 						</a>
 					</article>
 				</li>
@@ -201,7 +258,13 @@
 					<article>
 						<a href="#">
 							<h3>More Projects</h3>
-							<svg></svg>
+
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+								<!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+								<path
+									d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+							</svg>
+
 						</a>
 					</article>
 				</li>
@@ -211,7 +274,7 @@
 
 		<section>
 			<!-- Section 3 - Contact Banner / Link -->
-			<a href="">
+			<a href="#">
 				<p> Say
 					<span>Hello</span>
 				</p>
