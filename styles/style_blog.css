@@ -30,34 +30,33 @@ summary {
 
 :root {
     --color-text: #000000;
-    --color-background: #e5e7eb;
-    /* --color-accent: #f2941a; */
-    --color-accent-dark: hsl(260, 38%, 42%);
-    --color-accent-dark-hover: hsl(260, 38%, 20%);
-    --color-accent-light: hsl(260, 38%, 90%);
+    --color-background: #fff;
+    --color-accent: #f2941a;
+    --color-accent-dark:
+        hsl(260, 38%, 42%);
+    --color-accent-dark-hover:
+        hsl(260, 38%, 1%);
+    --color-accent-light:
+        hsl(263, 28%, 85%);
     --color-grey: #e5e7eb;
     --color-reverse-text: #fff;
 
     /* wip color */
-    --color-wip: hsla(74, 100%, 50%, 1);
+    --color-wip:
+        hsla(74, 100%, 50%, 1);
 
     --font-base: 400;
     --font-header: 900;
 
-    --default-font-var: "wgth" 400;
+    --default-font-var:
+        "wgth" 400;
 
-    /* Easier size to work with */
-    font-size: 10px;
-}
+    --highlight-active: hsl(260, 38%, 1%);
 
-html {
-    /* :( */
-    scrollbar-gutter: auto;
-    scrollbar-width: none;
 }
 
 body {
-    font-size: 1.8em;
+    font-size: 1.125rem;
     position: relative;
 
     min-width: 360px;
@@ -75,18 +74,15 @@ a {
 }
 
 h2:first-of-type {
-    font-size: 8em;
+    font-size: 6rem;
     font-weight: 900;
     color: var(--color-reverse-text);
 }
 
 h3 {
-    font-size: 2em;
+    font-size: 3rem;
     color: var(--color-reverse-text);
 }
-
-
-/* ul {} */
 
 
 p {
@@ -103,12 +99,26 @@ hr {
 }
 
 
+:focus {
+    outline: 5px solid var(--color-accent);
+}
+
+
 
 /* ------------ */
 /* || Utilities */
 /* -------------*/
 
 /* .anythingThatAppliesToALot {} */
+
+.activePage {
+    /* change root color per page */
+    color: var(--highlight-active);
+}
+
+button {
+    background: none;
+}
 
 header nav,
 footer nav,
@@ -124,6 +134,11 @@ a {
     /* forcing black unless otherwise stated */
     color: var(--color-text);
     text-decoration: none;
+}
+
+a:not(section:nth-of-type(3)):hover {
+    color: var(--color-accent-dark);
+    transition-duration: 0.2s;
 }
 
 .visually-hidden {
@@ -147,58 +162,7 @@ a {
 /* || Sitewide */
 /* ------------*/
 
-body div:first-of-type {
-    position: sticky;
-    top: 0;
-    z-index: 10000;
-}
 
-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: var(--color-reverse-text);
-
-    position: sticky;
-    top: 0;
-
-    height: 5rem;
-
-}
-
-header div {
-    /* display */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-content: center;
-
-    width: 100%;
-    height: 100%;
-}
-
-header div>a,
-header div>a:first-of-type img {
-    height: 100%;
-}
-
-header div>a:first-of-type img {
-    transform: scale(2);
-    /* I guess. */
-
-}
-
-
-header nav ul {
-    display: flex;
-    z-index: -1;
-
-}
-
-nav ul a {
-    /* || Positioning */
-    margin-right: 1em;
-}
 
 
 
@@ -208,6 +172,39 @@ nav ul a {
 /* || Navigation */
 /* ------------- */
 
+/* Button */
+
+span:nth-of-type(1),
+span:last-of-type {
+    top: 0px;
+}
+
+button {
+    background: none;
+
+    /* https://css-tricks.com/currentcolor/ */
+    outline: currentColor 0px none;
+    border: 0px none;
+}
+
+button span {
+    width: 1.5rem;
+    height: 0.2rem;
+
+    margin-bottom: 0.3rem;
+
+    /* for menu btn styling */
+    position: relative;
+    display: block;
+
+    /* button styling */
+    background-color: var(--color-text);
+    border-radius: 16px;
+
+    transition: all 0.3s ease 0s;
+    animation-direction: alternate;
+}
+
 header button {
     /* on larger screens, hide menu icon*/
     display: none;
@@ -215,27 +212,198 @@ header button {
 
 button {
     border: none;
-    z-index: 20;
+    z-index: 1001;
+
+}
+
+span:nth-of-type(1),
+span:last-of-type {
+    top: 0px;
+}
+
+button {
+    background: none;
+
+    /* https://css-tricks.com/currentcolor/ */
+    /* outline: currentColor 0px none; */
+    border: 0px none;
+}
+
+
+button span {
+    width: 22px;
+    height: 3px;
+
+    margin-bottom: 4px;
+
+    /* for menu btn styling */
+    position: relative;
+    display: block;
+
+    /* button styling */
+    background-color: var(--color-text);
+    border-radius: 16px;
+
+    transition: all 0.2s ease 0s;
+    animation-direction: alternate;
+}
+
+
+
+/* ---------------*/
+/* Active styling */
+/* ---------------*/
+
+.menuBtnOpenState span {
+    background-color: var(--color-background);
+}
+
+.menuBtnOpenState span:nth-of-type(1) {
+    top: 7px;
+    transform: rotate(-45deg);
+}
+
+.menuBtnOpenState span:nth-of-type(2) {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menuBtnOpenState span:nth-of-type(3) {
+    top: -7px;
+    transform: rotate(45deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+header nav ul li:first-child a.menuContent,
+header nav ul li:last-child a.menuContent {
+    /* make visible */
+    display: inline-block;
 
 }
 
 .menuContent {
     /* make visible */
     opacity: 1;
+    z-index: 1000;
+}
+
+span.menuContent {
+    background-color: var(--color-reverse-text);
 }
 
 .noScroll {
     overflow-y: hidden;
 }
 
+/* new */
+
+header {
+    /* positioning */
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+header>ul {
+    display: flex;
+    justify-content: center;
+
+    /* flex: 1 1 0%; */
+
+    height: 3.5rem;
+    background-color: var(--color-background);
+}
 
 
+
+header>ul>li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* positioning */
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    /* desktop padding */
+    padding-left: 3rem;
+    padding-right: 3rem;
+
+    /* Seriously...?*/
+    width: 100%;
+
+    /* copied value */
+    max-width: 1536px;
+
+}
+
+header nav ul {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    /* background-color: #fff; */
+}
+
+header ul li>a,
+header ul li>a:first-of-type img {
+    height: 100%;
+}
+
+header a:first-of-type img {
+    transform: scale(2);
+    /* I guess. */
+}
+
+header nav a {
+    /* || Positioning */
+    margin-left: 2.5rem;
+}
+
+/* Hide first and last item in list if not in mobile view */
+
+header nav ul li:first-child a,
+header nav ul li:last-child a {
+    display: none;
+}
 
 
 
 
 /* ------------ */
-/* || Blog Page */
+/* || Main Page */
 /* -------------*/
 header>div,
 main> :not(section:first-of-type),
@@ -249,7 +417,7 @@ footer {
 }
 
 
-/* || Hero Image */
+/* || Slideshow */
 
 
 
@@ -264,7 +432,7 @@ main section:first-of-type {
     text-align: center;
     /* container */
     width: 100%;
-    height: calc(70vh - 5rem);
+    height: calc(100vh - 3.5rem);
 
     /* background-image testing */
     /* keeping for fallback purposes */
@@ -272,15 +440,36 @@ main section:first-of-type {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
 
-    background-image: url(/images/Blog_Temp.webp);
+main section:first-of-type svg {
+    /* so why is this not a flex item? */
+    position: absolute;
+    height: 2em;
+    align-self: center;
+    bottom: 2em;
+}
 
+main section:nth-of-type(1) svg:hover {
+    /* down arrow in hero */
+    fill: var(--color-accent-dark);
+    transition-duration: 0.5s;
+}
+
+main section:first-of-type video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 main section:first-of-type h2 {
     position: absolute;
     font-variation-settings: "wght" 900;
 
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+    /* Center */
     left: 0;
     right: 0;
 }
@@ -295,25 +484,209 @@ main section:first-of-type h2 {
 
 
 /* ----------- */
-/* || Blog Page */
+/* || Projects */
 /* ----------- */
 
 main section:nth-of-type(2) {
     padding-top: 10rem;
 }
 
-section:nth-of-type(2) ul {
+main section:nth-of-type(2) ul {
+    /* Projects */
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 0.8rem;
+
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+/* !!! */
+main section:nth-of-type(2) li h3,
+main section:nth-of-type(2)>li a svg {
+    opacity: 0;
+    fill: none;
+}
+
+
+main section:nth-of-type(2) li a h3 {
+    position: absolute;
+
+    /* ¯\_(ツ)_/¯ */
+    padding: 2rem;
+
+}
+
+main section:nth-of-type(2)>li {
+    gap: 1rem;
+}
+
+main section:nth-of-type(2) li a:first-child {
+    position: relative;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+
+    /* set height for the articles so they all have the same height :) */
+    /* height: 500px; */
+    height: 31.25rem;
+}
+
+main section:nth-of-type(2) li:last-child a:first-child:last-of-type {
+    background-color: var(--color-accent-light);
+}
+
+main li:last-of-type h3 {
+    text-transform: uppercase;
+}
+
+main section:nth-of-type(2) li:last-of-type h3:last-of-type {
+    color: var(--color-text);
+    opacity: 1;
+}
+
+
+main section:nth-of-type(2) li a img {
+    /* Set w+h to 100*/
+    width: 100%;
+    height: 100%;
+
+    /* then shrink/stretch to fit */
+    object-fit: cover;
+}
+
+section:nth-of-type(2) ul li:nth-child(1),
+section:nth-of-type(2) ul li:nth-child(4),
+section:nth-of-type(2) ul li:nth-child(5),
+section:nth-of-type(2) ul li:last-child {
+    grid-column: span 5;
+    grid-row: span 1;
+}
+
+section:nth-of-type(2) ul li:nth-child(2),
+section:nth-of-type(2) ul li:nth-child(3),
+section:nth-of-type(2) ul li:nth-child(6),
+section:nth-of-type(2) ul li:nth-child(7) {
+    grid-column: span 7;
+    grid-row: span 1;
 }
 
 section:nth-of-type(2) li {
-    margin-right: 1em;
+    /* chevron-right */
+    position: relative;
+    overflow: hidden;
+    padding: 0.5rem 0;
 }
 
-/* new */
+main section:nth-of-type(2) li a:last-of-type svg {
+    /* chevron-right */
+    height: 1em;
+    position: absolute;
 
-section:nth-of-type(2) {}
+    fill: none;
+
+    right: 2rem;
+    bottom: 2rem;
+}
+
+main section:nth-of-type(2) li:last-child a svg {
+    fill: var(--color-text);
+}
+
+main section:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+}
+
+main section:nth-of-type(2) ul {
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    /* set max widths! */
+    max-width: 1536px;
+}
+
+
+
+
+/* >> Effects << */
+
+
+
+main li:hover a:first-child img {
+    /* scale image within container */
+    opacity: 30%;
+    transition-duration: 0.7s;
+    transform: scale(110%);
+    position: absolute;
+}
+
+main section:nth-of-type(2) li:hover a:last-of-type svg {
+    /* make chevron visible */
+    fill: var(--color-accent-light);
+    opacity: 100%;
+    z-index: 1;
+}
+
+main section:nth-of-type(2) li:hover h3 {
+    /* make h3 visible */
+    opacity: 100%;
+    z-index: 1;
+}
+
+main section:nth-of-type(2) li a:first-child:last-of-type:hover {
+    /* set default background color on hover */
+    background-color: var(--color-accent-dark-hover);
+    color: var(--color-accent-dark);
+    transition-duration: 0.5s;
+}
+
+main section:nth-of-type(2) li:last-child a:first-child:last-of-type:hover {
+    /* set default background color on hover */
+    background-color: var(--color-accent-dark);
+
+}
+
+main section:nth-of-type(2) li:last-child a:first-child:last-of-type:hover h3 {
+    color: var(--color-reverse-text);
+}
+
+
+
+
+/* ---------- */
+/* || Contact */
+/* ---------- */
+
+
+section:nth-of-type(3) a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 10rem 0;
+    padding-bottom: 1em;
+    padding-top: 1em;
+}
+
+
+section:nth-of-type(3) a p {
+    /* replacement :) */
+    font-size: 6em;
+    font-variation-settings: "wght" 900;
+    font-weight: var(--font-header);
+    text-transform: uppercase;
+
+}
+
+
+section:nth-of-type(3) span {
+    color: var(--color-accent-dark);
+}
+
+
+
+
 
 /* --------- */
 /* || Footer */
@@ -345,11 +718,12 @@ footer>section:first-of-type ul {
     /* ul parts of contact section */
     display: flex;
     flex-direction: column;
+    gap: 1em;
 }
 
 footer>section:first-of-type ul li {
     /* contact spacing */
-    padding-top: 2rem;
+    padding: 0.5em 0;
 }
 
 footer>section:first-of-type ul:last-child {
@@ -369,8 +743,8 @@ footer>section:last-of-type p {
 
 footer>section:first-of-type ul li * {
     /* all list items in contact info */
-    font-variation-settings: "wght" 100;
-    font-weight: 100;
+    font-variation-settings: "wght" 300;
+    /* font-weight: 300; */
 }
 
 
@@ -385,6 +759,7 @@ footer nav ul {
     flex-direction: row;
     gap: 2rem;
     flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 
@@ -410,10 +785,10 @@ footer section:last-of-type section {
     gap: 3em;
 }
 
-footer nav:last-of-type ul {
+footer nav:last-child ul {
     /* second footer nav */
     flex-direction: row-reverse;
-
+    padding: 0.6em 0;
 }
 
 
@@ -421,7 +796,6 @@ footer>section>section:last-of-type>p {
     /* Copyright */
     font-variation-settings: var(--default-font-var);
     align-self: flex-end;
-
 }
 
 
@@ -437,7 +811,7 @@ footer>section>section:last-of-type>p {
 /* Media Queries */
 /* Ordering is in uh, order ^^'  */
 
-@media screen and (max-width: 770px) {
+@media screen and (max-width: 1024px) {
 
     h1 {
         font-size: 2.5em;
@@ -445,6 +819,10 @@ footer>section>section:last-of-type>p {
 
     h2 {
         font-size: 1.5em;
+    }
+
+    h2:first-of-type {
+        font-size: 3rem;
     }
 
     main> :not(section:first-of-type),
@@ -456,6 +834,16 @@ footer>section>section:last-of-type>p {
         padding-right: 1.8em;
     }
 
+    main section:nth-of-type(1) img,
+    main section:nth-of-type(1) {
+        height: calc(100vh - 5rem);
+        object-fit: cover;
+    }
+
+    main section:nth-of-type(2) ul {
+        /* replace display: grid */
+        display: block;
+    }
 
     main section:nth-of-type(2) article {
         margin-bottom: 1em;
@@ -471,6 +859,7 @@ footer>section>section:last-of-type>p {
     header nav {
         /* hide normal nav on small screens */
         display: none;
+        /* show two extra menu items on small screen */
         opacity: 0;
     }
 
@@ -481,10 +870,6 @@ footer>section>section:last-of-type>p {
 
 
     /* || Nav */
-
-    header button {
-        z-index: 101;
-    }
 
     header nav {
         position: fixed;
@@ -510,28 +895,42 @@ footer>section>section:last-of-type>p {
         transition-duration: 0.5s;
     }
 
-    header>div nav ul {
+    header nav ul {
         /* why do I need the > ? */
-
         display: flex;
         flex-direction: column;
 
         align-items: center;
 
-        gap: 1em;
+        gap: 2.3rem;
         font-variation-settings: "wght" 900;
-        font-size: 1.8em;
+        font-size: 1.875rem;
+        line-height: 1.25rem;
+        font-weight: 900;
+        text-transform: uppercase;
+
+        padding-top: 3rem;
+    }
+
+    header nav a {
+        margin-left: 0;
     }
 
     header nav ul a {
         color: var(--color-reverse-text);
     }
 
-    header nav ul li {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        /* line-height: 2em; */
+    /* Projects */
 
-        font-size: 3rem;
+    section:nth-of-type(2) ul li {
+        padding: 0.5rem 0;
+    }
+
+
+    /* Footer */
+
+    .activePage {
+        color: var(--color-accent-dark);
+        filter: contrast(200%) brightness(50%)
     }
 }
