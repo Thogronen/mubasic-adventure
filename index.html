@@ -72,15 +72,14 @@
 	> Cleaned up CSS (though I still may want to group elements)
 	> Changed the footer structure - should hopefully be semantically OK now
 	> Fixed focus/hover/active states for the most part
-
-
-    > Added a few more text styles
+	
 
 	>> TODO <<
 
 	> Page 2!!!
 	> Media Queries for different sizes
 	> Check for accessibility
+	> Figure out how colors actually work kek
 
 	? Margin on menu
 	? Change list in footer I guess?
@@ -108,7 +107,6 @@
 
 
 	<header>
-		<!-- Really? -->
 		<ul>
 			<li>
 
@@ -118,8 +116,6 @@
 
 
 				<button aria-label="Main Menu">
-					<!-- menu toggle -->
-					<!-- <i class="fa-solid fa-bars fa-xl"></i> -->
 					<span class="menuBtn top"></span>
 					<span class="menuBtn middle"></span>
 					<span class="menuBtn bottom"></span>
@@ -315,10 +311,12 @@
 
 			<ul>
 				<li>
-					<a href="">Book a call</a>
+					<a href="">
+						<i class="fa-solid fa-phone"></i> Book a call</a>
 				</li>
 				<li>
-					<a href="mailto:hello@hound-studio.com">hello@hound-studio.com</a>
+					<a href="mailto:hello@hound-studio.com"><i class="fa-solid fa-envelope"></i>
+						hello@hound-studio.com</a>
 				</li>
 			</ul>
 

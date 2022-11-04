@@ -1,6 +1,3 @@
-/* PLEASE NO OVERLY COMPLICATED SELECTORS, WORK OUT TO IN */
-
-
 /* ------------------ */
 /* || General Styling */
 /* -------------------*/
@@ -27,34 +24,37 @@ summary {
     font-weight: 100 900;
 }
 
+/* dark blue - #5566a5 */
+/* ligh blue - opacity 10% */
 
 :root {
+    /* Normal text   */
     --color-text: #000000;
+
+    /* Default background color   */
     --color-background: #fff;
-    --color-accent: #f2941a;
-    --color-active: hsl(260, 38%, 22%);
 
-    --color-accent-dark:
-        hsl(260, 38%, 42%);
-    --color-accent-dark-hover:
-        hsl(260, 38%, 1%);
-    --color-accent-light:
-        hsl(263, 28%, 85%);
+    /*  Used for current Page active link color (in menu bar, both collapsed and open)  */
+    --color-active: rgba(85, 102, 165, 1);
 
-    --color-grey: #e5e7eb;
+    /*  Default COLORED background color   */
+    --color-accent: rgba(85, 102, 165, 1);
+
+    /*  Background-color for on-hover/focus cards */
+    --color-accent-dark-hover: rgba(85, 102, 165, 0.8);
+
+
+    /*  Coloring for footer and menu a:hover  */
+    --color-accent-light: rgba(85, 102, 165, 0.5);
+
+    /* Only used for header banner h2   */
     --color-reverse-text: #fff;
-
-    /* wip color */
-    --color-wip:
-        hsla(74, 100%, 50%, 1);
 
     --font-base: 400;
     --font-header: 900;
 
     --default-font-var:
         "wgth" 400;
-
-    --highlight-active: hsl(260, 38%, 1%);
 
 }
 
@@ -76,12 +76,6 @@ a {
     font-weight: 700;
 }
 
-h2:first-of-type {
-    font-size: 6rem;
-    font-weight: 900;
-    color: var(--color-reverse-text);
-}
-
 h3 {
     font-size: 3rem;
     color: var(--color-reverse-text);
@@ -94,6 +88,11 @@ p {
     font-weight: var(--font-base);
 }
 
+li {
+    font-family: Archivo, sans-serif;
+}
+
+
 
 hr {
     height: 1px;
@@ -101,46 +100,41 @@ hr {
     border-top: 3px black solid;
 }
 
-/* Very Hungry Feline Acrobats */
 
-a:visited {}
 
-a:hover {}
 
-/* :focus {
-	outline: 5px solid var(--color-accent);
-} */
+/* Link effects */
 
-a:active {
-    color: var(--color-accent-light) !important;
-    color: red !important;
+:visited {}
+
+:hover {}
+
+:focus {}
+
+:active {}
+
+a:hover:not(header nav),
+a:focus:not(header nav),
+button:hover,
+button:focus {
+    color: var(--color-accent-light);
 }
 
-nav a:active {
-    color: var(--color-accent-dark) !important;
+a:active,
+button:active {
+    text-decoration: var(--color-accent) 3px solid underline;
 }
+
+
+
+
+
+
 
 
 /* ------------ */
 /* || Utilities */
 /* -------------*/
-
-/* .anythingThatAppliesToALot {} */
-
-.activePage {
-    /* change root color per page */
-    color: var(--highlight-active);
-}
-
-button {
-    background: none;
-}
-
-header nav,
-footer nav,
-h2:first-of-type {
-    text-transform: uppercase;
-}
 
 ul {
     list-style: none;
@@ -150,12 +144,6 @@ a {
     /* forcing black unless otherwise stated */
     color: var(--color-text);
     text-decoration: none;
-}
-
-a:not(section:nth-of-type(3)):hover {
-    /* change pls */
-    color: var(--color-accent-dark);
-    transition-duration: 0.2s;
 }
 
 .visually-hidden {
@@ -169,29 +157,39 @@ a:not(section:nth-of-type(3)):hover {
     width: 1px;
 }
 
-.arrow-down {
-    fill: var(--color-background);
-}
-
 img {
     display: block;
 }
 
-/* https: //css-tricks.com/the-focus-visible-trick/ */
-:focus-visible {
-    outline: 4px dashed black;
+.activePage {
+    color: var(--color-accent);
 }
 
-:focus:not(:focus-visible) {
-    /* outline: none;
-	box-shadow: 1px 1px 5px rgba(1, 1, 0, .7); */
-}
+
+
+
+
+
 
 
 
 /* ----------- */
 /* || Sitewide */
 /* ------------*/
+
+header nav,
+footer nav,
+h2:first-of-type {
+    text-transform: uppercase;
+}
+
+h2:first-of-type {
+    font-size: 6rem;
+    font-weight: 900;
+    color: var(--color-reverse-text);
+}
+
+
 
 
 
@@ -203,147 +201,6 @@ img {
 /* || Navigation */
 /* ------------- */
 
-/* Button */
-
-span:nth-of-type(1),
-span:last-of-type {
-    top: 0px;
-}
-
-button {
-    background: none;
-
-    /* https://css-tricks.com/currentcolor/ */
-    outline: currentColor 0px none;
-    border: 0px none;
-}
-
-button span {
-    width: 1.5rem;
-    height: 0.2rem;
-
-    margin-bottom: 0.3rem;
-
-    /* for menu btn styling */
-    position: relative;
-    display: block;
-
-    /* button styling */
-    background-color: var(--color-text);
-    border-radius: 16px;
-
-    transition: all 0.3s ease 0s;
-    animation-direction: alternate;
-}
-
-header button {
-    /* on larger screens, hide menu icon*/
-    display: none;
-}
-
-button {
-    border: none;
-    z-index: 1001;
-
-}
-
-span:nth-of-type(1),
-span:last-of-type {
-    top: 0px;
-}
-
-button {
-    background: none;
-
-    /* https://css-tricks.com/currentcolor/ */
-    /* outline: currentColor 0px none; */
-    border: 0px none;
-}
-
-
-button span {
-    width: 22px;
-    height: 3px;
-
-    margin-bottom: 4px;
-
-    /* for menu btn styling */
-    position: relative;
-    display: block;
-
-    /* button styling */
-    background-color: var(--color-text);
-    border-radius: 16px;
-
-    transition: all 0.2s ease 0s;
-    animation-direction: alternate;
-}
-
-
-
-/* ---------------*/
-/* Active styling */
-/* ---------------*/
-
-.menuBtnOpenState span {
-    background-color: var(--color-background);
-}
-
-.menuBtnOpenState span:nth-of-type(1) {
-    top: 7px;
-    transform: rotate(-45deg);
-}
-
-.menuBtnOpenState span:nth-of-type(2) {
-    opacity: 0;
-    visibility: hidden;
-}
-
-.menuBtnOpenState span:nth-of-type(3) {
-    top: -7px;
-    transform: rotate(45deg);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-header nav ul li:first-child a.menuContent,
-header nav ul li:last-child a.menuContent {
-    /* make visible */
-    display: inline-block;
-
-}
-
 .menuContent {
     /* make visible */
     opacity: 1;
@@ -354,15 +211,16 @@ header nav ul li:last-child a.menuContent {
     pointer-events: all;
 }
 
-span.menuContent {
-    background-color: var(--color-reverse-text);
-}
-
 .noScroll {
+    /* Prevent scrolling while the menu is open   */
     overflow-y: hidden;
 }
 
-/* new */
+
+
+
+
+/* || Header */
 
 header {
     /* positioning */
@@ -376,13 +234,9 @@ header>ul {
     display: flex;
     justify-content: center;
 
-    /* flex: 1 1 0%; */
-
     height: 3.5rem;
     background-color: var(--color-background);
 }
-
-
 
 header>ul>li {
     display: flex;
@@ -398,11 +252,10 @@ header>ul>li {
     padding-left: 3rem;
     padding-right: 3rem;
 
-    /* Seriously...?*/
-    width: 100%;
-
-    /* copied value */
+    /* max width for menu content */
     max-width: 1536px;
+    /* Make the menu actually use the max-width*/
+    width: 100%;
 
 }
 
@@ -419,8 +272,8 @@ header ul li>a:first-of-type img {
 }
 
 header a:first-of-type img {
+    /* *shrugs* */
     transform: scale(2);
-    /* I guess. */
 }
 
 header nav a {
@@ -428,8 +281,7 @@ header nav a {
     margin-left: 2.5rem;
 }
 
-/* Hide first and last item in list if not in mobile view */
-
+/* Hide first and last item in list by default if not in mobile view */
 header nav ul li:first-child a,
 header nav ul li:last-child a {
     display: none;
@@ -438,9 +290,99 @@ header nav ul li:last-child a {
 
 
 
+
+/* || Button */
+
+span:first-of-type,
+span:last-of-type {
+    top: 0px;
+}
+
+button {
+    background: none;
+    outline: none;
+    border: 0px none;
+    z-index: 1001;
+}
+
+button span {
+    width: 1.5rem;
+    height: 0.2rem;
+
+    margin-bottom: 0.3rem;
+
+    /* for menu btn styling */
+    position: relative;
+    display: block;
+
+    /* button styling */
+    background-color: var(--color-text);
+    border-radius: 16px;
+
+    transition: all 0.2s ease 0s;
+    animation-direction: alternate;
+}
+
+header button {
+    /* Default behaviour. On larger screens, hide menu icon*/
+    display: none;
+}
+
+
+
+
+
+/* || Button active styling */
+
+.menuBtnOpenState span {
+    background-color: var(--color-background);
+}
+
+.menuBtnOpenState span:nth-of-type(1) {
+    top: 7.5px;
+    transform: rotate(-45deg);
+}
+
+.menuBtnOpenState span:nth-of-type(2) {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.menuBtnOpenState span:nth-of-type(3) {
+    top: -7.5px;
+    transform: rotate(45deg);
+}
+
+
+
+
+
+/* || Main Menu Navigation Item States */
+
+header nav ul li:first-child a.menuContent,
+header nav ul li:last-child a.menuContent {
+    /* make the first and last item visible when .menuContent is applied*/
+    display: inline-block;
+}
+
+span.menuContent {
+    /* Set color to white as .menuContent applies */
+    background-color: var(--color-reverse-text);
+}
+
+
+
+
+
+
+
+
+
 /* ------------ */
-/* || Main Page */
+/* || Blog Page */
 /* -------------*/
+
+
 header>div,
 main> :not(section:first-of-type),
 footer {
@@ -453,9 +395,7 @@ footer {
 }
 
 
-/* || Slideshow */
-
-
+/* || Banner */
 
 main section:first-of-type {
     /* || Positioning */
@@ -468,31 +408,13 @@ main section:first-of-type {
     text-align: center;
     /* container */
     width: 100%;
-    height: calc(100vh - 3.5rem);
 
-    /* background-image testing */
-    /* keeping for fallback purposes */
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    /* Page specific, change for other pages. Header is 3.5rem tall. */
+    height: calc(800px - 3.5rem);
+    background-color: var(--color-reverse-text);
 }
 
-main section:first-of-type svg {
-    /* so why is this not a flex item? */
-    position: absolute;
-    height: 2em;
-    align-self: center;
-    bottom: 2em;
-}
-
-main section:nth-of-type(1) svg:hover {
-    /* down arrow in hero */
-    fill: var(--color-accent-dark);
-    transition-duration: 0.5s;
-}
-
-main section:first-of-type video {
+main section:first-of-type img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -518,16 +440,54 @@ main section:first-of-type h2 {
 
 
 
-
 /* ----------- */
-/* || Projects */
+/* || Blog Items */
 /* ----------- */
 
 main section:nth-of-type(2) {
     padding-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 main section:nth-of-type(2) ul {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+
+    /* or  */
+
+    display: flex;
+    justify-content: center;
+}
+
+main section:nth-of-type(2) ul:first-of-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2.25rem;
+    flex-wrap: wrap;
+}
+
+main section:nth-of-type(2) ul li button {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 1.75rem;
+
+}
+
+.categoryActive {
+    color: var(--color-active);
+}
+
+/* || WIP HERE */
+
+
+
+/* ul */
+
+main section:nth-of-type(2) ul:last-of-type {
     /* Projects */
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -537,26 +497,53 @@ main section:nth-of-type(2) ul {
     padding-bottom: 5rem;
 }
 
-/* !!! */
+/* Make a 5+7 grid */
+section:nth-of-type(2) ul:last-of-type li:nth-child(1),
+section:nth-of-type(2) ul:last-of-type li:nth-child(4),
+section:nth-of-type(2) ul:last-of-type li:nth-child(5),
+section:nth-of-type(2) ul:last-of-type li:last-child {
+    grid-column: span 6;
+    grid-row: span 1;
+}
+
+section:nth-of-type(2) ul:last-of-type li:nth-child(2),
+section:nth-of-type(2) ul:last-of-type li:nth-child(3),
+section:nth-of-type(2) ul:last-of-type li:nth-child(6),
+section:nth-of-type(2) ul:last-of-type li:nth-child(7) {
+    grid-column: span 6;
+    grid-row: span 1;
+}
+
+main section:nth-of-type(2) ul:last-of-type {
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    /* set max widths! */
+    max-width: 1536px;
+}
+
+
+/* li */
+
 main section:nth-of-type(2) li h3,
 main section:nth-of-type(2)>li a svg {
     opacity: 0;
     fill: none;
 }
 
-
-main section:nth-of-type(2) li a h3 {
-    position: absolute;
-
-    /* ¯\_(ツ)_/¯ */
-    padding: 2rem;
-
-}
-
 main section:nth-of-type(2)>li {
     gap: 1rem;
 }
 
+
+/* li a  */
+
+main section:nth-of-type(2) li a h3 {
+    position: absolute;
+    padding: 2rem;
+}
+
+/* is first:child necessary? */
 main section:nth-of-type(2) li a:first-child {
     position: relative;
     display: flex;
@@ -568,19 +555,11 @@ main section:nth-of-type(2) li a:first-child {
     height: 31.25rem;
 }
 
-main section:nth-of-type(2) li:last-child a:first-child:last-of-type {
-    background-color: var(--color-accent-light);
+main section:nth-of-type(2) li a {
+    position: relative;
+    /* stop scaling overflow   */
+    overflow: hidden;
 }
-
-main li:last-of-type h3 {
-    text-transform: uppercase;
-}
-
-main section:nth-of-type(2) li:last-of-type h3:last-of-type {
-    color: var(--color-text);
-    opacity: 1;
-}
-
 
 main section:nth-of-type(2) li a img {
     /* Set w+h to 100*/
@@ -589,28 +568,6 @@ main section:nth-of-type(2) li a img {
 
     /* then shrink/stretch to fit */
     object-fit: cover;
-}
-
-section:nth-of-type(2) ul li:nth-child(1),
-section:nth-of-type(2) ul li:nth-child(4),
-section:nth-of-type(2) ul li:nth-child(5),
-section:nth-of-type(2) ul li:last-child {
-    grid-column: span 5;
-    grid-row: span 1;
-}
-
-section:nth-of-type(2) ul li:nth-child(2),
-section:nth-of-type(2) ul li:nth-child(3),
-section:nth-of-type(2) ul li:nth-child(6),
-section:nth-of-type(2) ul li:nth-child(7) {
-    grid-column: span 7;
-    grid-row: span 1;
-}
-
-section:nth-of-type(2) li {
-    /* chevron-right */
-    position: relative;
-    overflow: hidden;
 }
 
 main section:nth-of-type(2) li a:last-of-type svg {
@@ -628,25 +585,25 @@ main section:nth-of-type(2) li:last-child a svg {
     fill: var(--color-text);
 }
 
-main section:nth-of-type(2) {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
+
+
+/* last list item */
+
+main section:nth-of-type(2) li:last-child h3 {
+    text-transform: uppercase;
+    color: var(--color-text);
+    opacity: 1;
 }
 
-main section:nth-of-type(2) ul {
-    grid-column-start: 2;
-    grid-column-end: 3;
-
-    /* set max widths! */
-    max-width: 1536px;
+main section:nth-of-type(2) li:last-child a:first-child:last-of-type {
+    background-color: var(--color-accent-light);
 }
 
 
 
 
-/* >> Effects << */
 
-
+/* || Project - Effects */
 
 main li:hover a:first-child img {
     /* scale image within container */
@@ -658,7 +615,7 @@ main li:hover a:first-child img {
 
 main section:nth-of-type(2) li:hover a:last-of-type svg {
     /* make chevron visible */
-    fill: var(--color-accent-light);
+    fill: var(--color-background);
     opacity: 100%;
     z-index: 1;
 }
@@ -672,19 +629,25 @@ main section:nth-of-type(2) li:hover h3 {
 main section:nth-of-type(2) li a:first-child:last-of-type:hover {
     /* set default background color on hover */
     background-color: var(--color-accent-dark-hover);
-    color: var(--color-accent-dark);
+    color: var(--color-accent);
     transition-duration: 0.5s;
 }
 
 main section:nth-of-type(2) li:last-child a:first-child:last-of-type:hover {
     /* set default background color on hover */
-    background-color: var(--color-accent-dark);
+    background-color: var(--color-accent);
 
 }
 
 main section:nth-of-type(2) li:last-child a:first-child:last-of-type:hover h3 {
     color: var(--color-reverse-text);
 }
+
+
+
+
+
+
 
 
 
@@ -706,18 +669,21 @@ section:nth-of-type(3) a {
 
 
 section:nth-of-type(3) a p {
-    /* replacement :) */
     font-size: 6em;
     font-variation-settings: "wght" 900;
     font-weight: var(--font-header);
     text-transform: uppercase;
-
 }
 
 
 section:nth-of-type(3) span {
-    color: var(--color-accent-dark);
+    color: var(--color-accent);
 }
+
+
+
+
+
 
 
 
@@ -727,66 +693,62 @@ section:nth-of-type(3) span {
 /* || Footer */
 /* --------- */
 
-
 footer {
     background-color: var(--color-accent-light);
-}
-
-footer>section {
-    /* JUST the section! */
     padding-top: 2em;
     padding-bottom: 2em;
 }
 
+/* || Contact info */
 
-
-/* || CONTACT */
-
-footer>section:first-of-type {
-    /* contact section*/
+footer address {
+    /* first contact section*/
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-footer>section:first-of-type ul {
+footer address ul {
     /* ul parts of contact section */
     display: flex;
     flex-direction: column;
-    gap: 1em;
+
 }
 
-footer>section:first-of-type ul li {
+footer address ul li {
     /* contact spacing */
     padding: 0.5em 0;
 }
 
-footer>section:first-of-type ul:last-child {
+footer address ul:last-child {
     /* second list of contact*/
     text-align: end;
 }
 
-footer>section:first-of-type ul li *,
+footer address ul li *,
 footer>section:last-of-type p {
     /* Contact Info */
-
-    /* undo the default styling */
-    font-size: 1em;
-    font-family: Archivo, sans-serif;
+    /* set back to default styling */
+    font-size: 1rem;
     font-style: normal;
 }
 
-footer>section:first-of-type ul li * {
+footer address ul li * {
     /* all list items in contact info */
-    font-variation-settings: "wght" 300;
-    /* font-weight: 300; */
+    font-variation-settings: "wght" 100;
+    font-weight: 100;
+}
+
+footer div p {
+    align-self: flex-end;
 }
 
 
-
-
-
 /* || Footer main nav */
+
+footer>section>nav {
+    margin-top: 2rem;
+}
 
 footer nav ul {
     /* general footer nav */
@@ -795,49 +757,64 @@ footer nav ul {
     gap: 2rem;
     flex-wrap: wrap;
     justify-content: flex-start;
+
+
 }
 
-
-
-
-/* || Footer hr */
-
-footer hr {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-}
 
 
 
 
 /* || Footer social nav */
 
-footer section:last-of-type section {
-    /* copyright and social nav*/
+footer section,
+footer nav:last-child ul {
+    padding: 0.6em 0;
+}
+
+
+
+/* || Footer hr */
+
+footer hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+
+/* Under the cut */
+
+footer section div {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    gap: 3em;
+}
+
+footer section div p {
+    max-width: 50vw;
+    margin-right: 2rem;
 }
 
 footer nav:last-child ul {
     /* second footer nav */
     flex-direction: row-reverse;
-    padding: 0.6em 0;
+
 }
 
-
-footer>section>section:last-of-type>p {
+footer div p {
     /* Copyright */
-    font-variation-settings: var(--default-font-var);
     align-self: flex-end;
+    font-weight: 600;
+
+    line-height: 1.2rem;
+
 }
 
 
 
-
-
-
+.activePage {
+    color: var(--color-accent);
+}
 
 
 
@@ -847,6 +824,8 @@ footer>section>section:last-of-type>p {
 /* Ordering is in uh, order ^^'  */
 
 @media screen and (max-width: 1024px) {
+
+    /* || root */
 
     h1 {
         font-size: 2.5em;
@@ -860,57 +839,43 @@ footer>section>section:last-of-type>p {
         font-size: 3rem;
     }
 
+
+
+
+
+    /* || site-wide */
+
     main> :not(section:first-of-type),
     footer {
-        /* BOI */
-
-        /* || Positioning */
-        padding-left: 1.8em;
-        padding-right: 1.8em;
+        /* reduce padding to 1.8rem */
+        padding-left: 1.8rem;
+        padding-right: 1.8rem;
     }
 
-    main section:nth-of-type(1) img,
-    main section:nth-of-type(1) {
-        height: calc(100vh - 5rem);
-        object-fit: cover;
-    }
-
-    main section:nth-of-type(2) ul {
+    main section:nth-of-type(2) ul:last-of-type {
         /* replace display: grid */
         display: block;
     }
 
-    main section:nth-of-type(2) article {
-        margin-bottom: 1em;
-    }
-
-
     section:nth-of-type(3) a p {
-        font-size: 2em;
+        /* Say Hi! */
+        font-size: 2rem;
     }
 
-    header nav {
-        z-index: -1;
-    }
 
-    /* testing */
-
-    header nav {
-        /* hide normal nav on small screens */
-        display: none;
-        /* show two extra menu items on small screen */
-        opacity: 0;
-    }
+    /* || Header / nav */
 
     header button {
         /* show button on small screens*/
         display: block;
     }
 
-
-    /* || Nav */
-
     header nav {
+        /* hide normal nav on small screens */
+        display: none;
+        /* show two extra menu items on small screen */
+        opacity: 0;
+
         position: fixed;
 
         display: flex;
@@ -918,13 +883,11 @@ footer>section>section:last-of-type>p {
         align-items: center;
         /* Horizontal */
         justify-content: center;
-        background-color: var(--color-accent-dark);
-
+        background-color: var(--color-accent);
 
         /* fill entire screen */
         top: 0;
         left: 0;
-
         height: 100vh;
         width: 100vw;
 
@@ -939,18 +902,12 @@ footer>section>section:last-of-type>p {
     }
 
     header nav ul {
-        /* why do I need the > ? */
-        display: flex;
         flex-direction: column;
-
-        align-items: center;
 
         gap: 2.3rem;
         font-variation-settings: "wght" 900;
         font-size: 1.875rem;
         line-height: 1.25rem;
-        font-weight: 900;
-        text-transform: uppercase;
 
         padding-top: 3rem;
     }
@@ -963,17 +920,45 @@ footer>section>section:last-of-type>p {
         color: var(--color-reverse-text);
     }
 
-    /* Projects */
+    .activePage {
+        filter: contrast(200%) brightness(50%);
+    }
 
-    section:nth-of-type(2) ul li {
-        margin: 0.7rem 0;
+    nav a {
+        transition-duration: 0.5s;
+
+    }
+
+    header nav a:active,
+    header nav a:focus {
+        /* temp */
+        text-decoration: underline;
     }
 
 
+
+
+
+    /* Projects */
+
+    section:nth-of-type(2) ul li {
+        /* Added margin as gap doesn't work now */
+        margin: 0.7rem 0;
+    }
+}
+
+
+@media screen and (max-width: 425px) {
+    /* large mobile and smaller */
+
     /* Footer */
 
-    .activePage {
-        color: var(--color-accent-dark);
-        filter: contrast(200%) brightness(50%);
+    footer address {
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer address ul {
+        align-items: flex-start;
     }
 }

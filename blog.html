@@ -4,16 +4,91 @@
 <!-- Changelog -->
 
 <!-- 
+	>> 12/10/22 <<
+
+	> Added invisisible H1 [x]
+	> Changed Banner text to H2 [x]
+	> Made lists to group projects in section Projects [x]
+	> Changed list headers from H2 to H3 [x]
+	> Changed Section 5 to use lists for nav [x]
+
+	---
+
+	>> 13/10/22 <<
+
+	> Added list to main menu (whoops!) [x]
+	> Changed banner text from H1 to H2 [x]
+	> Fixed small screen menu animation [x]
+
+	---
+
+	>> 19/10/22 <<
+
+	> Fixed logo :)
+	> Fixed hero section video + fallback
+	> Decided on making the Blog page for the potential JS stuff =]
+
+	---
+
+	>> 24/10/22 <<
+	
+	> Added local link in hero section
+	> Menu now sticks to top of page
+
 	>> 26/10/22 <<
 
-	> Created this page
+	> Fixed projects resizing to full screen (needs MQ?) -- Fixed with Grid
+	> Changed a>a>svg in articles to a>svg
+	> Added hover transitions on articles
+	> Fixed some font / color issues for the articles
+
+	>> 30/10/22 <<
+
+	> Fixed the menu behaviour
+	> Added two menu items (still need to look at transitions?)
+	> Did some font size changes because it's hard :')
+
+	>> 31/10/22 <<
+
+	> Fixed sizing issues
+	> Fixed (?) GMV weird on hover effects
+	> Removed Articles from the article section =]
+	> Added a couple more hover effects
+
+	>> 1/11/22 <<
+
+	> Added extra padding for accessibility
+	> Fixed z-index shenenigans
+	> Added more ARIA labels
+	> Made a fun little menu button animation
+
+	>> 3/11/22 <<
+
+	> Fixed z-index issues with pointer-events: none;
+	> Fixed images escaping container (padding difference ayy)
+
+	>> 4/11/22 <<
+
+	> Cleaned up CSS (though I still may want to group elements)
+	> Changed the footer structure - should hopefully be semantically OK now
+	> Fixed focus/hover/active states for the most part
+
+
+    > Added a few more text styles
 
 	>> TODO <<
 
-	> Clean up CSS
+	> Page 2!!!
+	> Media Queries for different sizes
+	> Check for accessibility
+    > active states for categories/blogs
+
+	? Margin on menu
+	? Change list in footer I guess?
+	? Follow cursor thinghy
+	? Scrollbar gutter open-menu-resizing bs
 
   -->
-
 
 <head>
     <meta charset="UTF-8">
@@ -22,7 +97,7 @@
 
     <title>FED - HOUND Studio Animations - Home</title>
 
-    <link href="styles/style.css" rel="stylesheet">
+    <link href="styles/style_blog.css" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="images/hound-logo.webp">
 
     <script src="https://kit.fontawesome.com/f0f58681b8.js" crossorigin="anonymous"></script>
@@ -34,7 +109,6 @@
 
 
     <header>
-        <!-- Really? -->
         <ul>
             <li>
 
@@ -44,8 +118,6 @@
 
 
                 <button aria-label="Main Menu">
-                    <!-- menu toggle -->
-                    <!-- <i class="fa-solid fa-bars fa-xl"></i> -->
                     <span class="menuBtn top"></span>
                     <span class="menuBtn middle"></span>
                     <span class="menuBtn bottom"></span>
@@ -53,9 +125,9 @@
 
                 <nav aria-label="Main Menu">
                     <ul>
-                        <li><a class="activePage" href="index.html">Work</a></li>
+                        <li><a href="#">Work</a></li>
                         <li><a href="#">Process</a></li>
-                        <li><a href="blog.html">Blog</a></li>
+                        <li><a class="activePage" href="blog.html">Blog</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Get a quote</a></li>
                         <li><a href="#">Book a call</a></li>
@@ -70,36 +142,37 @@
 
     <main>
 
-        <h1 class="visually-hidden"> Hound Studio - 2D/3D animation & video production </h1>
+        <h1 class="visually-hidden"> Hound Studio - Blog </h1>
 
         <section>
             <!-- section 1 - imagery + banner  -->
 
 
-            <h2>We will <br> open your <br> mind</h2>
-            <video autoplay loop muted poster="./images/Josh_Story_Animation.webp">
-                <source src="./images/Hound_Showreel.mp4" type="video/mp4">
-            </video>
-            <a aria-hidden="true" href="#projects">
-                <svg class="arrow-down" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                    <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-                    <path
-                        d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
-                </svg>
-            </a>
-
+            <h2>Blog</h2>
+            <img src="./images/Blog_Temp.webp" alt="">
         </section>
 
-        <section id="projects">
-            <h2 class=" visually-hidden">Projecten</h2>
-            <!-- section 2 - projects -->
+        <section>
+            <h2 class=" visually-hidden">Blog Items</h2>
+            <!-- section 2 - blog items -->
+
+            <ul>
+                <li><button class="categoryActive">All</button></li>
+                <li><button>Video Marketing</button></li>
+                <li><button>Behind the Scenes</button></li>
+                <li><button>News</button></li>
+                <li><button>Creation Process</button></li>
+                <li><button>Inspired by Art</button></li>
+                <li><button>Interview</button></li>
+                <li><button>How To</button></li>
+            </ul>
 
             <ul>
                 <li>
 
                     <a href="josh-story.html">
-                        <h3>Josh's story</h3>
-                        <img src="images/Josh_Story.webp" alt="The future imagined from a childs' perspective.">
+                        <h3>The best animated shorts in 21-22</h3>
+                        <img src="images/blog-1.webp" alt="The future imagined from a childs' perspective.">
 
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                             <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -113,8 +186,8 @@
                 <li>
 
                     <a href="#">
-                        <h3>Eternity</h3>
-                        <img src="images/Eternity.webp"
+                        <h3>“Everything is wrong with me, but it is alive!”,- Maria Primachenko</h3>
+                        <img src="images/blog-2.webp"
                             alt=":A project about making engaging video content for children.">
 
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
@@ -129,8 +202,8 @@
                 <li>
 
                     <a href="#">
-                        <h3>Orchestra</h3>
-                        <img src="images/Orchestra.webp" alt="The story of the first New York Orchestra, anno 1972.">
+                        <h3>How we woke at War and didn’t lose our minds</h3>
+                        <img src="images/Blog_Temp.webp" alt="The story of the first New York Orchestra, anno 1972.">
 
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                             <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -144,8 +217,8 @@
                 <li>
 
                     <a href="#">
-                        <h3>Venray</h3>
-                        <img src="images/Venray.webp"
+                        <h3>How to make a video</h3>
+                        <img src="images/blog-4.webp"
                             alt="Venray: Animated shorts about the problems and solutions the Venray muncipality offers.">
 
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
@@ -235,31 +308,32 @@
 
     <footer>
 
-        <section>
-            <h2 class="visually-hidden">Contact</h2>
-            <!-- Section 4 - Contact -->
+        <!-- Contact Information (Old Section 4) -->
+        <!-- Better? -->
+        <address aria-label="Contact Information">
+
             <ul>
                 <li>
-                    <a href="">Book a call</a>
+                    <a href="">
+                        <i class="fa-solid fa-phone"></i> Book a call</a>
                 </li>
                 <li>
-                    <address>
-                        <a href="mailto:hello@hound-studio.com">hello@hound-studio.com</a>
-                    </address>
+                    <a href="mailto:hello@hound-studio.com"><i class="fa-solid fa-envelope"></i>
+                        hello@hound-studio.com</a>
                 </li>
             </ul>
 
             <ul>
                 <li>
-                    <address> Bohdana Khmelnytskoho St, 24 </address>
+                    <p>Bohdana Khmelnytskoho St, 24</p>
                 </li>
                 <li>
                     <p>Kharkiv, Ukraine</p>
                 </li>
             </ul>
 
+        </address>
 
-        </section>
 
         <section>
             <h2 class="visually-hidden">Categories</h2>
@@ -283,10 +357,9 @@
 
             <hr>
 
-            <section>
-                <h2 class="visually-hidden">?</h2>
-                <!-- Section 5.1 - Copyright -->
-                <p>Copy @ 2022 Thomas Groeneweg. All rights reserved.</p>
+            <div>
+                <!-- Copyright -->
+                <p>Thogronen @ 2022. Lots of lightbulbs were replaced during the making of this website.</p>
                 <!-- Socials -->
                 <nav aria-label="Social Media">
                     <ul>
@@ -298,7 +371,8 @@
                         <li><a href="#">Be</a></li>
                     </ul>
                 </nav>
-            </section>
+            </div>
+
         </section>
     </footer>
 

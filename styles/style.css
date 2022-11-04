@@ -117,7 +117,14 @@ hr {
 
 :active {}
 
+a:hover,
+a:focus {
+	color: var(--color-accent);
+}
 
+a:active {
+	text-decoration: var(--color-accent) 3px solid underline;
+}
 
 
 
@@ -329,7 +336,7 @@ header button {
 }
 
 .menuBtnOpenState span:nth-of-type(1) {
-	top: 7px;
+	top: 7.5px;
 	transform: rotate(-45deg);
 }
 
@@ -339,7 +346,7 @@ header button {
 }
 
 .menuBtnOpenState span:nth-of-type(3) {
-	top: -7px;
+	top: -7.5px;
 	transform: rotate(45deg);
 }
 
@@ -708,7 +715,7 @@ footer address ul li *,
 footer>section:last-of-type p {
 	/* Contact Info */
 	/* set back to default styling */
-	font-size: 1em;
+	font-size: 1rem;
 	font-style: normal;
 }
 
@@ -718,13 +725,14 @@ footer address ul li * {
 	font-weight: 100;
 }
 
-
-
+footer div p {
+	align-self: flex-end;
+}
 
 
 /* || Footer main nav */
 
-footer nav {
+footer>section>nav {
 	margin-top: 2rem;
 }
 
@@ -755,8 +763,8 @@ footer nav:last-child ul {
 /* || Footer hr */
 
 footer hr {
-	margin-top: 3rem;
-	margin-bottom: 3rem;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
 }
 
 
@@ -769,7 +777,7 @@ footer section div {
 }
 
 footer section div p {
-	max-width: 40vw;
+	max-width: 50vw;
 	margin-right: 2rem;
 }
 
@@ -780,10 +788,13 @@ footer nav:last-child ul {
 }
 
 
-footer>section>section:last-of-type>p {
+footer div p {
 	/* Copyright */
-	font-variation-settings: var(--default-font-var);
 	align-self: flex-end;
+	font-weight: 600;
+
+	line-height: 1.2rem;
+
 }
 
 
