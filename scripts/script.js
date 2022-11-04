@@ -8,7 +8,7 @@ var navBtn = document.querySelector("nav");
 var menuMoreItems = document.querySelector("header nav ul li:first-child a");
 var menuMoreItemsB = document.querySelector("header nav ul li:last-child a");
 
-var spanSwitch = document.querySelectorAll("span.top, span.middle, span.bottom");
+var spanSwitch = document.querySelectorAll("span");
 
 var scrollLock = document.querySelector("body");
 
@@ -45,14 +45,14 @@ var menuBottom = document.querySelector("span.bottom");
 
 
 
+
 // on click element with class .menuBtn, call toggleMenu
 menuBtn.addEventListener("click", toggleMenu);
 
 function toggleMenu() {
-    // toggle: menuOpen will prevent overflow, disabling scrolling
-    scrollLock.classList.toggle("disableScrolling");
-    // toggle: menuContent will make the contents of the menu visible.
-    menuToggle.classList.toggle("menuContentVisible");
+
+    // toggle: 
+    menuToggle.classList.toggle("pointerEventsEnabled");
 
     // toggle: change style for menu button.
     menuTop.classList.toggle("menuBtnOpenState");

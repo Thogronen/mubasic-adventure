@@ -1,6 +1,3 @@
-/* PLEASE NO OVERLY COMPLICATED SELECTORS, WORK OUT TO IN */
-
-
 /* ------------------ */
 /* || General Styling */
 /* -------------------*/
@@ -29,29 +26,44 @@ summary {
 
 
 :root {
+	/* Normal text   */
 	--color-text: #000000;
+
+	/* Default background color   */
 	--color-background: #fff;
-	--color-accent: #f2941a;
-	--color-accent-dark:
+
+	/*  Used for current Page active link color (in menu bar, both collapsed and open)  */
+	--color-active: hsl(260, 38%, 22%);
+
+	/*  Default COLORED background color   */
+	--color-accent:
 		hsl(260, 38%, 42%);
+	/*  Background-color for on-hover/focus cards */
 	--color-accent-dark-hover:
 		hsl(260, 38%, 1%);
+
+
+	/*  Coloring for footer and menu a:hover  */
 	--color-accent-light:
 		hsl(263, 28%, 85%);
+
+	/*  Unused  */
 	--color-grey: #e5e7eb;
+
+	/* Only used for header banner h2   */
 	--color-reverse-text: #fff;
 
+	/*  Unused, was used to color the active page in menu. Replaced by --color-active + filter.  */
+	--highlight-active: hsl(260, 38%, 1%);
+
 	/* wip color */
-	--color-wip:
-		hsla(74, 100%, 50%, 1);
+	--wip: hsla(74, 100%, 50%, 1);
 
 	--font-base: 400;
 	--font-header: 900;
 
 	--default-font-var:
 		"wgth" 400;
-
-	--highlight-active: hsl(260, 38%, 1%);
 
 }
 
@@ -71,12 +83,6 @@ h5,
 a {
 	font-family: 'Archivo', sans-serif;
 	font-weight: 700;
-}
-
-h2:first-of-type {
-	font-size: 6rem;
-	font-weight: 900;
-	color: var(--color-reverse-text);
 }
 
 h3 {
@@ -99,32 +105,30 @@ hr {
 }
 
 
-:focus {
-	outline: 5px solid var(--color-accent);
-}
+
+
+/* Link effects */
+
+:visited {}
+
+:hover {}
+
+:focus {}
+
+:active {}
+
+
+
+
+
+
+
 
 
 
 /* ------------ */
 /* || Utilities */
 /* -------------*/
-
-/* .anythingThatAppliesToALot {} */
-
-.activePage {
-	/* change root color per page */
-	color: var(--highlight-active);
-}
-
-button {
-	background: none;
-}
-
-header nav,
-footer nav,
-h2:first-of-type {
-	text-transform: uppercase;
-}
 
 ul {
 	list-style: none;
@@ -134,11 +138,6 @@ a {
 	/* forcing black unless otherwise stated */
 	color: var(--color-text);
 	text-decoration: none;
-}
-
-a:not(section:nth-of-type(3)):hover {
-	color: var(--color-accent-dark);
-	transition-duration: 0.2s;
 }
 
 .visually-hidden {
@@ -152,15 +151,35 @@ a:not(section:nth-of-type(3)):hover {
 	width: 1px;
 }
 
-.arrow-down {
-	fill: var(--color-background);
+img {
+	display: block;
 }
+
+
+
+
+
+
 
 
 
 /* ----------- */
 /* || Sitewide */
 /* ------------*/
+
+header nav,
+footer nav,
+h2:first-of-type {
+	text-transform: uppercase;
+}
+
+h2:first-of-type {
+	font-size: 6rem;
+	font-weight: 900;
+	color: var(--color-reverse-text);
+}
+
+
 
 
 
@@ -172,19 +191,108 @@ a:not(section:nth-of-type(3)):hover {
 /* || Navigation */
 /* ------------- */
 
-/* Button */
+.menuContent {
+	/* make visible */
+	opacity: 1;
+	z-index: 1000;
+}
 
-span:nth-of-type(1),
+.pointerEventsEnabled {
+	pointer-events: all;
+}
+
+.noScroll {
+	/* Prevent scrolling while the menu is open   */
+	overflow-y: hidden;
+}
+
+
+
+
+
+/* || Header */
+
+header {
+	/* positioning */
+	position: sticky;
+	top: 0;
+	z-index: 2;
+}
+
+
+header>ul {
+	display: flex;
+	justify-content: center;
+
+	height: 3.5rem;
+	background-color: var(--color-background);
+}
+
+header>ul>li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	/* positioning */
+	position: sticky;
+	top: 0;
+	z-index: 1;
+
+	/* desktop padding */
+	padding-left: 3rem;
+	padding-right: 3rem;
+
+	/* max width for menu content */
+	max-width: 1536px;
+	/* Make the menu actually use the max-width*/
+	width: 100%;
+
+}
+
+header nav ul {
+	display: flex;
+	/* justify-content: space-between; */
+	align-items: center;
+	/* background-color: #fff; */
+}
+
+header ul li>a,
+header ul li>a:first-of-type img {
+	height: 100%;
+}
+
+header a:first-of-type img {
+	/* *shrugs* */
+	transform: scale(2);
+}
+
+header nav a {
+	/* || Positioning */
+	margin-left: 2.5rem;
+}
+
+/* Hide first and last item in list by default if not in mobile view */
+header nav ul li:first-child a,
+header nav ul li:last-child a {
+	display: none;
+}
+
+
+
+
+
+/* || Button */
+
+span:first-of-type,
 span:last-of-type {
 	top: 0px;
 }
 
 button {
 	background: none;
-
-	/* https://css-tricks.com/currentcolor/ */
-	outline: currentColor 0px none;
+	outline: none;
 	border: 0px none;
+	z-index: 1001;
 }
 
 button span {
@@ -201,58 +309,20 @@ button span {
 	background-color: var(--color-text);
 	border-radius: 16px;
 
-	transition: all 0.3s ease 0s;
-	animation-direction: alternate;
-}
-
-header button {
-	/* on larger screens, hide menu icon*/
-	display: none;
-}
-
-button {
-	border: none;
-	z-index: 1001;
-
-}
-
-span:nth-of-type(1),
-span:last-of-type {
-	top: 0px;
-}
-
-button {
-	background: none;
-
-	/* https://css-tricks.com/currentcolor/ */
-	/* outline: currentColor 0px none; */
-	border: 0px none;
-}
-
-
-button span {
-	width: 22px;
-	height: 3px;
-
-	margin-bottom: 4px;
-
-	/* for menu btn styling */
-	position: relative;
-	display: block;
-
-	/* button styling */
-	background-color: var(--color-text);
-	border-radius: 16px;
-
 	transition: all 0.2s ease 0s;
 	animation-direction: alternate;
 }
 
+header button {
+	/* Default behaviour. On larger screens, hide menu icon*/
+	display: none;
+}
 
 
-/* ---------------*/
-/* Active styling */
-/* ---------------*/
+
+
+
+/* || Button active styling */
 
 .menuBtnOpenState span {
 	background-color: var(--color-background);
@@ -277,127 +347,23 @@ button span {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* || Main Menu Navigation Item States */
 
 header nav ul li:first-child a.menuContent,
 header nav ul li:last-child a.menuContent {
-	/* make visible */
+	/* make the first and last item visible when .menuContent is applied*/
 	display: inline-block;
-
-}
-
-.menuContent {
-	/* make visible */
-	opacity: 1;
-	z-index: 1000;
 }
 
 span.menuContent {
+	/* Set color to white as .menuContent applies */
 	background-color: var(--color-reverse-text);
 }
 
-.noScroll {
-	overflow-y: hidden;
-}
-
-/* new */
-
-header {
-	/* positioning */
-	position: sticky;
-	top: 0;
-	z-index: 2;
-}
-
-header>ul {
-	display: flex;
-	justify-content: center;
-
-	/* flex: 1 1 0%; */
-
-	height: 3.5rem;
-	background-color: var(--color-background);
-}
 
 
 
-header>ul>li {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
 
-	/* positioning */
-	position: sticky;
-	top: 0;
-	z-index: 1;
-
-	/* desktop padding */
-	padding-left: 3rem;
-	padding-right: 3rem;
-
-	/* Seriously...?*/
-	width: 100%;
-
-	/* copied value */
-	max-width: 1536px;
-
-}
-
-header nav ul {
-	display: flex;
-	/* justify-content: space-between; */
-	align-items: center;
-	/* background-color: #fff; */
-}
-
-header ul li>a,
-header ul li>a:first-of-type img {
-	height: 100%;
-}
-
-header a:first-of-type img {
-	transform: scale(2);
-	/* I guess. */
-}
-
-header nav a {
-	/* || Positioning */
-	margin-left: 2.5rem;
-}
-
-/* Hide first and last item in list if not in mobile view */
-
-header nav ul li:first-child a,
-header nav ul li:last-child a {
-	display: none;
-}
 
 
 
@@ -405,6 +371,8 @@ header nav ul li:last-child a {
 /* ------------ */
 /* || Main Page */
 /* -------------*/
+
+
 header>div,
 main> :not(section:first-of-type),
 footer {
@@ -417,9 +385,7 @@ footer {
 }
 
 
-/* || Slideshow */
-
-
+/* || Video Reel */
 
 main section:first-of-type {
 	/* || Positioning */
@@ -432,14 +398,9 @@ main section:first-of-type {
 	text-align: center;
 	/* container */
 	width: 100%;
+
+	/* Page specific, change for other pages. Header is 3.5rem tall. */
 	height: calc(100vh - 3.5rem);
-
-	/* background-image testing */
-	/* keeping for fallback purposes */
-
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
 }
 
 main section:first-of-type svg {
@@ -448,11 +409,13 @@ main section:first-of-type svg {
 	height: 2em;
 	align-self: center;
 	bottom: 2em;
+
+	fill: var(--color-background);
 }
 
 main section:nth-of-type(1) svg:hover {
 	/* down arrow in hero */
-	fill: var(--color-accent-dark);
+	fill: var(--color-accent);
 	transition-duration: 0.5s;
 }
 
@@ -482,7 +445,6 @@ main section:first-of-type h2 {
 
 
 
-
 /* ----------- */
 /* || Projects */
 /* ----------- */
@@ -490,6 +452,19 @@ main section:first-of-type h2 {
 main section:nth-of-type(2) {
 	padding-top: 10rem;
 }
+
+main section:nth-of-type(2) {
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
+
+	/* or  */
+
+	display: flex;
+	justify-content: center;
+}
+
+
+/* ul */
 
 main section:nth-of-type(2) ul {
 	/* Projects */
@@ -501,60 +476,7 @@ main section:nth-of-type(2) ul {
 	padding-bottom: 5rem;
 }
 
-/* !!! */
-main section:nth-of-type(2) li h3,
-main section:nth-of-type(2)>li a svg {
-	opacity: 0;
-	fill: none;
-}
-
-
-main section:nth-of-type(2) li a h3 {
-	position: absolute;
-
-	/* ¯\_(ツ)_/¯ */
-	padding: 2rem;
-
-}
-
-main section:nth-of-type(2)>li {
-	gap: 1rem;
-}
-
-main section:nth-of-type(2) li a:first-child {
-	position: relative;
-	display: flex;
-	flex-wrap: wrap;
-	width: 100%;
-
-	/* set height for the articles so they all have the same height :) */
-	/* height: 500px; */
-	height: 31.25rem;
-}
-
-main section:nth-of-type(2) li:last-child a:first-child:last-of-type {
-	background-color: var(--color-accent-light);
-}
-
-main li:last-of-type h3 {
-	text-transform: uppercase;
-}
-
-main section:nth-of-type(2) li:last-of-type h3:last-of-type {
-	color: var(--color-text);
-	opacity: 1;
-}
-
-
-main section:nth-of-type(2) li a img {
-	/* Set w+h to 100*/
-	width: 100%;
-	height: 100%;
-
-	/* then shrink/stretch to fit */
-	object-fit: cover;
-}
-
+/* Make a 5+7 grid */
 section:nth-of-type(2) ul li:nth-child(1),
 section:nth-of-type(2) ul li:nth-child(4),
 section:nth-of-type(2) ul li:nth-child(5),
@@ -571,11 +493,60 @@ section:nth-of-type(2) ul li:nth-child(7) {
 	grid-row: span 1;
 }
 
-section:nth-of-type(2) li {
-	/* chevron-right */
+main section:nth-of-type(2) ul {
+	grid-column-start: 2;
+	grid-column-end: 3;
+
+	/* set max widths! */
+	max-width: 1536px;
+}
+
+
+/* li */
+
+main section:nth-of-type(2) li h3,
+main section:nth-of-type(2)>li a svg {
+	opacity: 0;
+	fill: none;
+}
+
+main section:nth-of-type(2)>li {
+	gap: 1rem;
+}
+
+
+/* li a  */
+
+main section:nth-of-type(2) li a h3 {
+	position: absolute;
+	padding: 2rem;
+}
+
+/* is first:child necessary? */
+main section:nth-of-type(2) li a:first-child {
 	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+
+	/* set height for the articles so they all have the same height :) */
+	/* height: 500px; */
+	height: 31.25rem;
+}
+
+main section:nth-of-type(2) li a {
+	position: relative;
+	/* stop scaling overflow   */
 	overflow: hidden;
-	padding: 0.5rem 0;
+}
+
+main section:nth-of-type(2) li a img {
+	/* Set w+h to 100*/
+	width: 100%;
+	height: 100%;
+
+	/* then shrink/stretch to fit */
+	object-fit: cover;
 }
 
 main section:nth-of-type(2) li a:last-of-type svg {
@@ -593,25 +564,25 @@ main section:nth-of-type(2) li:last-child a svg {
 	fill: var(--color-text);
 }
 
-main section:nth-of-type(2) {
-	display: grid;
-	grid-template-columns: 1fr auto 1fr;
+
+
+/* last list item */
+
+main section:nth-of-type(2) li:last-child h3 {
+	text-transform: uppercase;
+	color: var(--color-text);
+	opacity: 1;
 }
 
-main section:nth-of-type(2) ul {
-	grid-column-start: 2;
-	grid-column-end: 3;
-
-	/* set max widths! */
-	max-width: 1536px;
+main section:nth-of-type(2) li:last-child a:first-child:last-of-type {
+	background-color: var(--color-accent-light);
 }
 
 
 
 
-/* >> Effects << */
 
-
+/* || Project - Effects */
 
 main li:hover a:first-child img {
 	/* scale image within container */
@@ -637,19 +608,25 @@ main section:nth-of-type(2) li:hover h3 {
 main section:nth-of-type(2) li a:first-child:last-of-type:hover {
 	/* set default background color on hover */
 	background-color: var(--color-accent-dark-hover);
-	color: var(--color-accent-dark);
+	color: var(--color-accent);
 	transition-duration: 0.5s;
 }
 
 main section:nth-of-type(2) li:last-child a:first-child:last-of-type:hover {
 	/* set default background color on hover */
-	background-color: var(--color-accent-dark);
+	background-color: var(--color-accent);
 
 }
 
 main section:nth-of-type(2) li:last-child a:first-child:last-of-type:hover h3 {
 	color: var(--color-reverse-text);
 }
+
+
+
+
+
+
 
 
 
@@ -671,18 +648,21 @@ section:nth-of-type(3) a {
 
 
 section:nth-of-type(3) a p {
-	/* replacement :) */
 	font-size: 6em;
 	font-variation-settings: "wght" 900;
 	font-weight: var(--font-header);
 	text-transform: uppercase;
-
 }
 
 
 section:nth-of-type(3) span {
-	color: var(--color-accent-dark);
+	color: var(--color-accent);
 }
+
+
+
+
+
 
 
 
@@ -692,59 +672,50 @@ section:nth-of-type(3) span {
 /* || Footer */
 /* --------- */
 
-
 footer {
 	background-color: var(--color-accent-light);
-}
-
-footer>section {
-	/* JUST the section! */
 	padding-top: 2em;
 	padding-bottom: 2em;
 }
 
+/* || Contact info */
 
-
-/* || CONTACT */
-
-footer>section:first-of-type {
-	/* contact section*/
+footer address {
+	/* first contact section*/
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 }
 
-footer>section:first-of-type ul {
+footer address ul {
 	/* ul parts of contact section */
 	display: flex;
 	flex-direction: column;
-	gap: 1em;
+
 }
 
-footer>section:first-of-type ul li {
+footer address ul li {
 	/* contact spacing */
 	padding: 0.5em 0;
 }
 
-footer>section:first-of-type ul:last-child {
+footer address ul:last-child {
 	/* second list of contact*/
 	text-align: end;
 }
 
-footer>section:first-of-type ul li *,
+footer address ul li *,
 footer>section:last-of-type p {
 	/* Contact Info */
-
-	/* undo the default styling */
+	/* set back to default styling */
 	font-size: 1em;
-	font-family: Archivo, sans-serif;
 	font-style: normal;
 }
 
-footer>section:first-of-type ul li * {
+footer address ul li * {
 	/* all list items in contact info */
-	font-variation-settings: "wght" 300;
-	/* font-weight: 300; */
+	font-variation-settings: "wght" 100;
+	font-weight: 100;
 }
 
 
@@ -753,6 +724,10 @@ footer>section:first-of-type ul li * {
 
 /* || Footer main nav */
 
+footer nav {
+	margin-top: 2rem;
+}
+
 footer nav ul {
 	/* general footer nav */
 	display: flex;
@@ -760,8 +735,20 @@ footer nav ul {
 	gap: 2rem;
 	flex-wrap: wrap;
 	justify-content: flex-start;
+
+
 }
 
+
+
+
+
+/* || Footer social nav */
+
+footer section,
+footer nav:last-child ul {
+	padding: 0.6em 0;
+}
 
 
 
@@ -774,21 +761,22 @@ footer hr {
 
 
 
+/* Under the cut */
 
-/* || Footer social nav */
-
-footer section:last-of-type section {
-	/* copyright and social nav*/
+footer section div {
 	display: flex;
-	flex-direction: row;
 	justify-content: space-between;
-	gap: 3em;
+}
+
+footer section div p {
+	max-width: 40vw;
+	margin-right: 2rem;
 }
 
 footer nav:last-child ul {
 	/* second footer nav */
 	flex-direction: row-reverse;
-	padding: 0.6em 0;
+
 }
 
 
@@ -806,12 +794,12 @@ footer>section>section:last-of-type>p {
 
 
 
-
-
 /* Media Queries */
 /* Ordering is in uh, order ^^'  */
 
 @media screen and (max-width: 1024px) {
+
+	/* || root */
 
 	h1 {
 		font-size: 2.5em;
@@ -825,19 +813,17 @@ footer>section>section:last-of-type>p {
 		font-size: 3rem;
 	}
 
+
+
+
+
+	/* || site-wide */
+
 	main> :not(section:first-of-type),
 	footer {
-		/* BOI */
-
-		/* || Positioning */
-		padding-left: 1.8em;
-		padding-right: 1.8em;
-	}
-
-	main section:nth-of-type(1) img,
-	main section:nth-of-type(1) {
-		height: calc(100vh - 5rem);
-		object-fit: cover;
+		/* reduce padding to 1.8rem */
+		padding-left: 1.8rem;
+		padding-right: 1.8rem;
 	}
 
 	main section:nth-of-type(2) ul {
@@ -845,33 +831,25 @@ footer>section>section:last-of-type>p {
 		display: block;
 	}
 
-	main section:nth-of-type(2) article {
-		margin-bottom: 1em;
-	}
-
-
 	section:nth-of-type(3) a p {
-		font-size: 2em;
+		/* Say Hi! */
+		font-size: 2rem;
 	}
 
 
-
-	header nav {
-		/* hide normal nav on small screens */
-		display: none;
-		/* show two extra menu items on small screen */
-		opacity: 0;
-	}
+	/* || Header / nav */
 
 	header button {
 		/* show button on small screens*/
 		display: block;
 	}
 
-
-	/* || Nav */
-
 	header nav {
+		/* hide normal nav on small screens */
+		display: none;
+		/* show two extra menu items on small screen */
+		opacity: 0;
+
 		position: fixed;
 
 		display: flex;
@@ -879,35 +857,31 @@ footer>section>section:last-of-type>p {
 		align-items: center;
 		/* Horizontal */
 		justify-content: center;
-		background-color: var(--color-accent-dark);
-
+		background-color: var(--color-accent);
 
 		/* fill entire screen */
 		top: 0;
-		right: 0;
-		bottom: 0;
 		left: 0;
+		height: 100vh;
+		width: 100vw;
 
 		/* z-index */
 		z-index: 100;
 
 		/* animation */
 		transition-duration: 0.5s;
+
+		/* new */
+		pointer-events: none;
 	}
 
 	header nav ul {
-		/* why do I need the > ? */
-		display: flex;
 		flex-direction: column;
-
-		align-items: center;
 
 		gap: 2.3rem;
 		font-variation-settings: "wght" 900;
 		font-size: 1.875rem;
 		line-height: 1.25rem;
-		font-weight: 900;
-		text-transform: uppercase;
 
 		padding-top: 3rem;
 	}
@@ -920,17 +894,51 @@ footer>section>section:last-of-type>p {
 		color: var(--color-reverse-text);
 	}
 
-	/* Projects */
+	.activePage {
+		color: var(--color-accent);
+		filter: contrast(200%) brightness(50%);
+	}
 
-	section:nth-of-type(2) ul li {
-		padding: 0.5rem 0;
+	nav a {
+		transition-duration: 0.5s;
+
+	}
+
+	header nav a:active,
+	header nav a:focus {
+		/* temp */
+		text-decoration: underline;
+	}
+
+	header nav a:not(.activePage):hover,
+	header nav a:not(.activePage):active {
+		color: var(--color-accent-light);
 	}
 
 
+
+
+
+	/* Projects */
+
+	section:nth-of-type(2) ul li {
+		/* Added margin as gap doesn't work now */
+		margin: 0.7rem 0;
+	}
+}
+
+
+@media screen and (max-width: 425px) {
+	/* large mobile and smaller */
+
 	/* Footer */
 
-	.activePage {
-		color: var(--color-accent-dark);
-		filter: contrast(200%) brightness(50%)
+	footer address {
+		display: flex;
+		flex-direction: column;
+	}
+
+	footer address ul {
+		align-items: flex-start;
 	}
 }

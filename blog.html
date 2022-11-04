@@ -10,88 +10,225 @@
 
 	>> TODO <<
 
-	> Add two more menu items on small screen menu (js insertAdjacentText?)
-	> Menu button animation
-	> Scrollbar gutter open-menu-resizing bs
-	> Clean up unnecessary CSS
-	> Check what the heck is wrong with the Global Music Vault
-	> Page 2!!!
+	> Clean up CSS
 
   -->
+
 
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Thomas">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>FED - HOUND Studio Animations - Blog</title>
+    <title>FED - HOUND Studio Animations - Home</title>
 
-    <link href="styles/style_blog.css" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="images/hound-logo.webp">
 
     <script src="https://kit.fontawesome.com/f0f58681b8.js" crossorigin="anonymous"></script>
+
 </head>
 
 
 <body>
-    <div>
 
-        <header>
-            <div>
+
+    <header>
+        <!-- Really? -->
+        <ul>
+            <li>
+
                 <a href="index.html">
-                    <!-- <img src="./images/hound-logo.webp" alt="Hound Studio"> -->
                     <img src="./images/logo.svg" alt="Hound Studio">
-
-
-
                 </a>
 
 
                 <button aria-label="Main Menu">
                     <!-- menu toggle -->
-                    <i class="fa-solid fa-bars fa-xl"></i>
-                    <!-- <span class="top"></span>
-				<span class="middle"></span>
-				<span class="bottom"></span> -->
+                    <!-- <i class="fa-solid fa-bars fa-xl"></i> -->
+                    <span class="menuBtn top"></span>
+                    <span class="menuBtn middle"></span>
+                    <span class="menuBtn bottom"></span>
                 </button>
 
-                <nav>
+                <nav aria-label="Main Menu">
                     <ul>
+                        <li><a class="activePage" href="index.html">Work</a></li>
                         <li><a href="#">Process</a></li>
-                        <li><a class="activePage" href="#">Blog</a></li>
+                        <li><a href="blog.html">Blog</a></li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Get a quote</a></li>
+                        <li><a href="#">Book a call</a></li>
                     </ul>
                 </nav>
-            </div>
-        </header>
-    </div>
+
+            </li>
+        </ul>
+
+    </header>
+
 
     <main>
 
-        <h1 class="visually-hidden"> Hound Studio - Blog </h1>
+        <h1 class="visually-hidden"> Hound Studio - 2D/3D animation & video production </h1>
 
         <section>
             <!-- section 1 - imagery + banner  -->
-            <h2>Blog</h2>
+
+
+            <h2>We will <br> open your <br> mind</h2>
+            <video autoplay loop muted poster="./images/Josh_Story_Animation.webp">
+                <source src="./images/Hound_Showreel.mp4" type="video/mp4">
+            </video>
+            <a aria-hidden="true" href="#projects">
+                <svg class="arrow-down" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                    <path
+                        d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                </svg>
+            </a>
+
         </section>
 
-        <section>
-            <h2 class=" visually-hidden">Article Categories</h2>
-            <!-- section 2 - Articles -->
+        <section id="projects">
+            <h2 class=" visually-hidden">Projecten</h2>
+            <!-- section 2 - projects -->
+
             <ul>
-                <li><a href="#">All</a></li>
-                <li><a href="#">Video Marketing</a></li>
-                <li><a href="#">Behind the Scenes</a></li>
-                <li><a href="#"></a>News</li>
-                <li><a href="#"></a>Creation Process</li>
-                <li><a href="#"></a>Inspired by Art</li>
-                <li><a href="#"></a>Interview</li>
-                <li><a href="#"></a>How-To</li>
+                <li>
+
+                    <a href="josh-story.html">
+                        <h3>Josh's story</h3>
+                        <img src="images/Josh_Story.webp" alt="The future imagined from a childs' perspective.">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                            <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                            <path
+                                d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>
+
+                    </a>
+
+                </li>
+                <li>
+
+                    <a href="#">
+                        <h3>Eternity</h3>
+                        <img src="images/Eternity.webp"
+                            alt=":A project about making engaging video content for children.">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                            <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                            <path
+                                d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>
+
+                    </a>
+
+                </li>
+                <li>
+
+                    <a href="#">
+                        <h3>Orchestra</h3>
+                        <img src="images/Orchestra.webp" alt="The story of the first New York Orchestra, anno 1972.">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                            <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                            <path
+                                d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>
+                    </a>
+
+
+                </li>
+                <li>
+
+                    <a href="#">
+                        <h3>Venray</h3>
+                        <img src="images/Venray.webp"
+                            alt="Venray: Animated shorts about the problems and solutions the Venray muncipality offers.">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                            <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                            <path
+                                d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>
+                    </a>
+
+
+                </li>
+                <li>
+
+                    <a href="#">
+                        <h3>Global Music Vault</h3>
+                        <img src="images/Global_Music_Vault.webp"
+                            alt="This is the story of the creation of the Global Music Vault, a vault designed to keep the music of the ages safe.">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                            <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                            <path
+                                d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>
+                    </a>
+
+
+                </li>
+                <li>
+
+                    <a href="#">
+                        <h3>Outdoor Clothing Brand</h3>
+                        <img src="images/Outdoor_Clothing_Brand.webp"
+                            alt="Partnership with Patagonia to bring more sustainable clothing to the attention of more people.">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                            <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                            <path
+                                d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>
+                    </a>
+
+
+                </li>
+                <li>
+
+                    <a href="#">
+                        <h3>Krock.io</h3>
+                        <img src="images/Krock_io.webp" alt="Streamline your workflow and collaboration with Krock.io.">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                            <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                            <path
+                                d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>
+                    </a>
+
+                </li>
+                <li>
+
+                    <a href="#">
+                        <h3>More Projects</h3>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                            <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                            <path
+                                d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z" />
+                        </svg>
+
+                    </a>
+
+                </li>
             </ul>
-            <ul></ul>
+        </section>
 
 
+        <section>
+            <h2 class="visually-hidden">Say Hello</h2>
+            <!-- Section 3 - Contact Banner / Link -->
+            <a href="#">
+                <p> Say
+                    <span>Hello</span>
+                </p>
+            </a>
         </section>
 
     </main>
@@ -99,20 +236,22 @@
     <footer>
 
         <section>
+            <h2 class="visually-hidden">Contact</h2>
             <!-- Section 4 - Contact -->
             <ul>
                 <li>
                     <a href="">Book a call</a>
                 </li>
                 <li>
-                    <adress><a href="mailto:hello@hound-studio.com">hello@hound-studio.com</a></adress>
+                    <address>
+                        <a href="mailto:hello@hound-studio.com">hello@hound-studio.com</a>
+                    </address>
                 </li>
             </ul>
 
             <ul>
                 <li>
-                    <address>Bohdana Khmelnytskoho St, 24</adress>
-
+                    <address> Bohdana Khmelnytskoho St, 24 </address>
                 </li>
                 <li>
                     <p>Kharkiv, Ukraine</p>
@@ -123,8 +262,9 @@
         </section>
 
         <section>
+            <h2 class="visually-hidden">Categories</h2>
             <!-- Section 5 - Categories -->
-            <nav>
+            <nav aria-label="Our services">
                 <ul>
                     <li>
                         <a href="">2D Animation</a>
@@ -144,10 +284,11 @@
             <hr>
 
             <section>
+                <h2 class="visually-hidden">?</h2>
                 <!-- Section 5.1 - Copyright -->
                 <p>Copy @ 2022 Thomas Groeneweg. All rights reserved.</p>
                 <!-- Socials -->
-                <nav>
+                <nav aria-label="Social Media">
                     <ul>
                         <li><a href="#">Vimeo</a></li>
                         <li><a href="#">Instg</a></li>
@@ -161,8 +302,7 @@
         </section>
     </footer>
 
+    <script src="scripts/script.js"></script>
 </body>
-
-<script src="scripts/script.js"></script>
 
 </html>

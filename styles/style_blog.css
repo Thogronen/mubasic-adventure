@@ -32,12 +32,15 @@ summary {
     --color-text: #000000;
     --color-background: #fff;
     --color-accent: #f2941a;
+    --color-active: hsl(260, 38%, 22%);
+
     --color-accent-dark:
         hsl(260, 38%, 42%);
     --color-accent-dark-hover:
         hsl(260, 38%, 1%);
     --color-accent-light:
         hsl(263, 28%, 85%);
+
     --color-grey: #e5e7eb;
     --color-reverse-text: #fff;
 
@@ -98,11 +101,24 @@ hr {
     border-top: 3px black solid;
 }
 
+/* Very Hungry Feline Acrobats */
 
-:focus {
-    outline: 5px solid var(--color-accent);
+a:visited {}
+
+a:hover {}
+
+/* :focus {
+	outline: 5px solid var(--color-accent);
+} */
+
+a:active {
+    color: var(--color-accent-light) !important;
+    color: red !important;
 }
 
+nav a:active {
+    color: var(--color-accent-dark) !important;
+}
 
 
 /* ------------ */
@@ -137,6 +153,7 @@ a {
 }
 
 a:not(section:nth-of-type(3)):hover {
+    /* change pls */
     color: var(--color-accent-dark);
     transition-duration: 0.2s;
 }
@@ -154,6 +171,20 @@ a:not(section:nth-of-type(3)):hover {
 
 .arrow-down {
     fill: var(--color-background);
+}
+
+img {
+    display: block;
+}
+
+/* https: //css-tricks.com/the-focus-visible-trick/ */
+:focus-visible {
+    outline: 4px dashed black;
+}
+
+:focus:not(:focus-visible) {
+    /* outline: none;
+	box-shadow: 1px 1px 5px rgba(1, 1, 0, .7); */
 }
 
 
@@ -319,6 +350,10 @@ header nav ul li:last-child a.menuContent {
     z-index: 1000;
 }
 
+.pointerEventsEnabled {
+    pointer-events: all;
+}
+
 span.menuContent {
     background-color: var(--color-reverse-text);
 }
@@ -335,6 +370,7 @@ header {
     top: 0;
     z-index: 2;
 }
+
 
 header>ul {
     display: flex;
@@ -575,7 +611,6 @@ section:nth-of-type(2) li {
     /* chevron-right */
     position: relative;
     overflow: hidden;
-    padding: 0.5rem 0;
 }
 
 main section:nth-of-type(2) li a:last-of-type svg {
@@ -854,7 +889,11 @@ footer>section>section:last-of-type>p {
         font-size: 2em;
     }
 
+    header nav {
+        z-index: -1;
+    }
 
+    /* testing */
 
     header nav {
         /* hide normal nav on small screens */
@@ -884,15 +923,19 @@ footer>section>section:last-of-type>p {
 
         /* fill entire screen */
         top: 0;
-        right: 0;
-        bottom: 0;
         left: 0;
+
+        height: 100vh;
+        width: 100vw;
 
         /* z-index */
         z-index: 100;
 
         /* animation */
         transition-duration: 0.5s;
+
+        /* new */
+        pointer-events: none;
     }
 
     header nav ul {
@@ -923,7 +966,7 @@ footer>section>section:last-of-type>p {
     /* Projects */
 
     section:nth-of-type(2) ul li {
-        padding: 0.5rem 0;
+        margin: 0.7rem 0;
     }
 
 
@@ -931,6 +974,6 @@ footer>section>section:last-of-type>p {
 
     .activePage {
         color: var(--color-accent-dark);
-        filter: contrast(200%) brightness(50%)
+        filter: contrast(200%) brightness(50%);
     }
 }

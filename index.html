@@ -1,21 +1,6 @@
 <!doctype html>
 <html lang="en">
 
-<!-- ToDo -->
-
-<!-- 
-
-	1. Is de structuur OK? [Fixed]
-	2. Fix voor de header text left alignment bij resizing [Fixed]
-	3. last-item in grid sizing (werkt wel in mobile view) [Fixed]
-	4. Bepalen welke pagina OK is om te maken (Process/Quote?) [Checked]
-	5. Font-variation-settings issues [TBD]
-	6. Animations? [TBD]
-	7. Rotating *gallery?* for banner [TBD]
-
- -->
-
-
 <!-- Changelog -->
 
 <!-- 
@@ -77,15 +62,27 @@
 	> Added more ARIA labels
 	> Made a fun little menu button animation
 
+	>> 3/11/22 <<
+
+	> Fixed z-index issues with pointer-events: none;
+	> Fixed images escaping container (padding difference ayy)
+
+	>> 4/11/22 <<
+
+	> Cleaned up CSS (though I still may want to group elements)
+	> Changed the footer structure - should hopefully be semantically OK now
+	> Fixed focus/hover/active states for the most part
+
+
+    > Added a few more text styles
+
 	>> TODO <<
 
 	> Page 2!!!
 	> Media Queries for different sizes
-	> z-inded for menu overlay
-	> image escaping conainers 
 	> Check for accessibility
-	? Button :focus?
 
+	? Margin on menu
 	? Change list in footer I guess?
 	? Follow cursor thinghy
 	? Scrollbar gutter open-menu-resizing bs
@@ -312,31 +309,30 @@
 
 	<footer>
 
-		<section>
-			<h2 class="visually-hidden">Contact</h2>
-			<!-- Section 4 - Contact -->
+		<!-- Contact Information (Old Section 4) -->
+		<!-- Better? -->
+		<address aria-label="Contact Information">
+
 			<ul>
 				<li>
 					<a href="">Book a call</a>
 				</li>
 				<li>
-					<address>
-						<a href="mailto:hello@hound-studio.com">hello@hound-studio.com</a>
-					</address>
+					<a href="mailto:hello@hound-studio.com">hello@hound-studio.com</a>
 				</li>
 			</ul>
 
 			<ul>
 				<li>
-					<address> Bohdana Khmelnytskoho St, 24 </address>
+					<p>Bohdana Khmelnytskoho St, 24</p>
 				</li>
 				<li>
 					<p>Kharkiv, Ukraine</p>
 				</li>
 			</ul>
 
+		</address>
 
-		</section>
 
 		<section>
 			<h2 class="visually-hidden">Categories</h2>
@@ -360,10 +356,9 @@
 
 			<hr>
 
-			<section>
-				<h2 class="visually-hidden">?</h2>
-				<!-- Section 5.1 - Copyright -->
-				<p>Copy @ 2022 Thomas Groeneweg. All rights reserved.</p>
+			<div>
+				<!-- Copyright -->
+				<p>Thogronen @ 2022. Lots of headpats and scratches were given during the making of this website.</p>
 				<!-- Socials -->
 				<nav aria-label="Social Media">
 					<ul>
@@ -375,7 +370,8 @@
 						<li><a href="#">Be</a></li>
 					</ul>
 				</nav>
-			</section>
+			</div>
+
 		</section>
 	</footer>
 
