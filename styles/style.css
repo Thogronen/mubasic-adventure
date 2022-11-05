@@ -36,28 +36,20 @@ summary {
 	--color-active: hsl(260, 38%, 22%);
 
 	/*  Default COLORED background color   */
-	--color-accent:
+	--main-color:
 		hsl(260, 38%, 42%);
+
 	/*  Background-color for on-hover/focus cards */
-	--color-accent-dark-hover:
+	--main-color-dark-hover:
 		hsl(260, 38%, 1%);
 
 
 	/*  Coloring for footer and menu a:hover  */
-	--color-accent-light:
+	--main-color-light:
 		hsl(263, 28%, 85%);
-
-	/*  Unused  */
-	--color-grey: #e5e7eb;
 
 	/* Only used for header banner h2   */
 	--color-reverse-text: #fff;
-
-	/*  Unused, was used to color the active page in menu. Replaced by --color-active + filter.  */
-	--highlight-active: hsl(260, 38%, 1%);
-
-	/* wip color */
-	--wip: hsla(74, 100%, 50%, 1);
 
 	--font-base: 400;
 	--font-header: 900;
@@ -113,19 +105,32 @@ hr {
 
 :hover {}
 
+header nav ul a:hover:not(.activePage),
+header nav ul a:focus:not(.activePage) {
+	color: var(--main-color);
+	filter: brightness(200%);
+}
+
+.footer-links a:hover,
+.header-links a:hover {
+	color: var(--main-color);
+}
+
 :focus {}
 
 :active {}
 
-a:hover,
-a:focus {
-	color: var(--color-accent);
+a:hover:not(header nav),
+a:focus:not(header nav),
+button:hover,
+button:focus {
+	color: var(--main-color);
 }
 
-a:active {
-	text-decoration: var(--color-accent) 3px solid underline;
+a:active,
+button:active {
+	text-decoration: var(--main-color) 3px solid underline;
 }
-
 
 
 
@@ -426,7 +431,7 @@ main section:first-of-type svg {
 
 main section:nth-of-type(1) svg:hover {
 	/* down arrow in hero */
-	fill: var(--color-accent);
+	fill: var(--main-color);
 	transition-duration: 0.5s;
 
 	animation-name: bouncyArrow;
@@ -444,7 +449,7 @@ main section:nth-of-type(1) svg:hover {
 
 	50% {
 		transform: translateY(-1rem);
-		fill: var(--color-accent-dark-hover);
+		fill: var(--main-color-dark-hover);
 	}
 
 	100% {
@@ -608,7 +613,7 @@ main section:nth-of-type(2) li:last-child h3 {
 }
 
 main section:nth-of-type(2) li:last-child a:first-child:last-of-type {
-	background-color: var(--color-accent-light);
+	background-color: var(--main-color-light);
 }
 
 
@@ -628,7 +633,7 @@ main li:hover a:first-child img {
 
 main section:nth-of-type(2) li:hover a:last-of-type svg {
 	/* make chevron visible */
-	fill: var(--color-accent-light);
+	fill: var(--main-color-light);
 	opacity: 100%;
 	z-index: 1;
 }
@@ -641,14 +646,14 @@ main section:nth-of-type(2) li:hover h3 {
 
 main section:nth-of-type(2) li a:first-child:last-of-type:hover {
 	/* set default background color on hover */
-	background-color: var(--color-accent-dark-hover);
-	color: var(--color-accent);
+	background-color: var(--main-color-dark-hover);
+	color: var(--main-color);
 
 }
 
 main section:nth-of-type(2) li:last-child a:first-child:last-of-type:hover {
 	/* set default background color on hover */
-	background-color: var(--color-accent);
+	background-color: var(--main-color);
 }
 
 main section:nth-of-type(2) li:last-child a:first-child:last-of-type:hover h3 {
@@ -689,7 +694,7 @@ section:nth-of-type(3) a p {
 
 
 section:nth-of-type(3) span {
-	color: var(--color-accent);
+	color: var(--main-color);
 }
 
 
@@ -706,7 +711,7 @@ section:nth-of-type(3) span {
 /* --------- */
 
 footer {
-	background-color: var(--color-accent-light);
+	background-color: var(--main-color-light);
 	padding-top: 2em;
 	padding-bottom: 2em;
 }
@@ -832,7 +837,11 @@ footer div p {
 
 
 /* Media Queries */
-/* Ordering is in uh, order ^^'  */
+/* *sighs* */
+
+@media screen and (min-width: 1024px) {}
+
+@media screen and (min-width: 425px) {}
 
 @media screen and (max-width: 1024px) {
 
@@ -849,14 +858,6 @@ footer div p {
 	h2:first-of-type {
 		font-size: 3rem;
 	}
-
-	h3 {
-		font-size: 3rem;
-	}
-
-
-
-
 
 	/* || site-wide */
 
@@ -898,7 +899,7 @@ footer div p {
 		align-items: center;
 		/* Horizontal */
 		justify-content: center;
-		background-color: var(--color-accent);
+		background-color: var(--main-color);
 
 		/* fill entire screen */
 		top: 0;
@@ -936,7 +937,7 @@ footer div p {
 	}
 
 	.activePage {
-		color: var(--color-accent);
+		color: var(--main-color);
 		filter: contrast(200%) brightness(50%);
 	}
 
@@ -951,10 +952,10 @@ footer div p {
 		text-decoration: underline;
 	}
 
-	header nav a:not(.activePage):hover,
+	/* header nav a:not(.activePage):hover,
 	header nav a:not(.activePage):active {
-		color: var(--color-accent-light);
-	}
+		color: var(--main-color-light);
+	} */
 
 
 

@@ -24,27 +24,24 @@ summary {
     font-weight: 100 900;
 }
 
-/* dark blue - #5566a5 */
-/* ligh blue - opacity 10% */
 
 :root {
     /* Normal text   */
-    --color-text: #000000;
+    --color-text: #000;
 
-    /* Default background color   */
+    /* Default background color + first H2 banner   */
     --color-background: #fff;
+
+    /* Main page color */
+    --main-color: rgba(85, 102, 165, 1);
 
     /*  Used for current Page active link color (in menu bar, both collapsed and open)  */
     --color-active: rgba(85, 102, 165, 1);
 
-    /*  Default COLORED background color   */
-    --color-accent: rgba(85, 102, 165, 1);
-
     /*  Background-color for on-hover/focus cards */
     --color-accent-dark-hover: rgba(85, 102, 165, 0.8);
 
-
-    /*  Coloring for footer and menu a:hover  */
+    /*  Coloring for footer, last grid item and menu a:hover  */
     --color-accent-light: rgba(85, 102, 165, 0.5);
 
     /* Only used for header banner h2   */
@@ -114,16 +111,27 @@ hr {
 
 :active {}
 
+header nav ul a:hover:not(.activePage),
+header nav ul a:focus:not(.activePage) {
+    color: var(--main-color);
+    filter: brightness(200%);
+}
+
+.footer-links a:hover,
+.header-links a:hover {
+    color: var(--main-color);
+}
+
 a:hover:not(header nav),
 a:focus:not(header nav),
 button:hover,
 button:focus {
-    color: var(--color-accent-light);
+    color: var(--main-color);
 }
 
 a:active,
 button:active {
-    text-decoration: var(--color-accent) 3px solid underline;
+    text-decoration: var(--main-color) 3px solid underline;
 }
 
 
@@ -163,7 +171,8 @@ img {
 }
 
 .activePage {
-    color: var(--color-accent);
+    color: var(--main-color);
+    filter: contrast(200%) brightness(50%);
 }
 
 .js-hide {
@@ -268,7 +277,6 @@ header nav ul {
     display: flex;
     /* justify-content: space-between; */
     align-items: center;
-    /* background-color: #fff; */
 }
 
 header ul li>a,
@@ -491,7 +499,7 @@ main section:nth-of-type(2) ul li button {
 }
 
 .categoryActive {
-    color: var(--color-active);
+    color: var(--main-color);
 }
 
 
@@ -642,19 +650,21 @@ main section:nth-of-type(2) li:hover h3 {
     z-index: 1;
 }
 
-main section:nth-of-type(2) li a:first-child:last-of-type:hover {
+main section:nth-of-type(2) li:hover a:first-child:last-of-type,
+main section:nth-of-type(2) li:focus a:first-child:last-of-type {
     /* set default background color on hover */
     background-color: var(--color-accent-dark-hover);
-    color: var(--color-accent);
+    color: var(--main-color);
 
     transition-property: transform;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 0.7s;
 }
 
-main section:nth-of-type(2) li:last-child a:first-child:last-of-type:hover {
+main section:nth-of-type(2) li:last-child:hover a:first-child:last-of-type,
+main section:nth-of-type(2) li:last-child:focus a:first-child:last-of-type {
     /* set default background color on hover */
-    background-color: var(--color-accent);
+    background-color: var(--main-color);
 
 }
 
@@ -696,7 +706,7 @@ section:nth-of-type(3) a p {
 
 
 section:nth-of-type(3) span {
-    color: var(--color-accent);
+    color: var(--main-color);
 }
 
 
@@ -906,7 +916,7 @@ footer div p {
         align-items: center;
         /* Horizontal */
         justify-content: center;
-        background-color: var(--color-accent);
+        background-color: var(--main-color);
 
         /* fill entire screen */
         top: 0;
@@ -944,7 +954,7 @@ footer div p {
     }
 
     .activePage {
-        filter: contrast(200%) brightness(50%);
+        /* filter: contrast(200%) brightness(50%); */
     }
 
     nav a {
