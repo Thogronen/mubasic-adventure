@@ -4,68 +4,6 @@
 <!-- Changelog -->
 
 <!-- 
-	>> 12/10/22 <<
-
-	> Added invisisible H1 [x]
-	> Changed Banner text to H2 [x]
-	> Made lists to group projects in section Projects [x]
-	> Changed list headers from H2 to H3 [x]
-	> Changed Section 5 to use lists for nav [x]
-
-	---
-
-	>> 13/10/22 <<
-
-	> Added list to main menu (whoops!) [x]
-	> Changed banner text from H1 to H2 [x]
-	> Fixed small screen menu animation [x]
-
-	---
-
-	>> 19/10/22 <<
-
-	> Fixed logo :)
-	> Fixed hero section video + fallback
-	> Decided on making the Blog page for the potential JS stuff =]
-
-	---
-
-	>> 24/10/22 <<
-	
-	> Added local link in hero section
-	> Menu now sticks to top of page
-
-	>> 26/10/22 <<
-
-	> Fixed projects resizing to full screen (needs MQ?) -- Fixed with Grid
-	> Changed a>a>svg in articles to a>svg
-	> Added hover transitions on articles
-	> Fixed some font / color issues for the articles
-
-	>> 30/10/22 <<
-
-	> Fixed the menu behaviour
-	> Added two menu items (still need to look at transitions?)
-	> Did some font size changes because it's hard :')
-
-	>> 31/10/22 <<
-
-	> Fixed sizing issues
-	> Fixed (?) GMV weird on hover effects
-	> Removed Articles from the article section =]
-	> Added a couple more hover effects
-
-	>> 1/11/22 <<
-
-	> Added extra padding for accessibility
-	> Fixed z-index shenenigans
-	> Added more ARIA labels
-	> Made a fun little menu button animation
-
-	>> 3/11/22 <<
-
-	> Fixed z-index issues with pointer-events: none;
-	> Fixed images escaping container (padding difference ayy)
 
 	>> 4/11/22 <<
 
@@ -82,6 +20,8 @@
 	> Media Queries for different sizes
 	> Check for accessibility
     > active states for categories/blogs
+    > text-overflow for long text
+    > alt texts
 
 	? Margin on menu
 	? Change list in footer I guess?
@@ -95,7 +35,7 @@
     <meta name="author" content="Thomas">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>FED - HOUND Studio Animations - Home</title>
+    <title>FED - HOUND Studio Animations - Blog</title>
 
     <link href="styles/style_blog.css" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href="images/hound-logo.webp">
@@ -157,22 +97,22 @@
             <!-- section 2 - blog items -->
 
             <ul>
-                <li><button class="categoryActive">All</button></li>
-                <li><button>Video Marketing</button></li>
-                <li><button>Behind the Scenes</button></li>
-                <li><button>News</button></li>
-                <li><button>Creation Process</button></li>
-                <li><button>Inspired by Art</button></li>
-                <li><button>Interview</button></li>
-                <li><button>How To</button></li>
+                <li><button class="btn-all categoryActive">All</button></li>
+                <li><button class="btn-video">Video Marketing</button></li>
+                <li><button class="btn-bts">Behind the Scenes</button></li>
+                <li><button class="btn-news">News</button></li>
+                <li><button class="btn-cp">Creation Process</button></li>
+                <li><button class="btn-art">Inspired by Art</button></li>
+                <li><button class="btn-int">Interview</button></li>
+                <li><button class="btn-howto">How To</button></li>
             </ul>
 
             <ul>
-                <li>
+                <li class="items news art">
 
-                    <a href="josh-story.html">
+                    <a href="#">
                         <h3>The best animated shorts in 21-22</h3>
-                        <img src="images/blog-1.webp" alt="The future imagined from a childs' perspective.">
+                        <img src="images/blog-1.webp" alt="">
 
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                             <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -183,12 +123,11 @@
                     </a>
 
                 </li>
-                <li>
+                <li class="items art">
 
                     <a href="#">
                         <h3>“Everything is wrong with me, but it is alive!”,- Maria Primachenko</h3>
-                        <img src="images/blog-2.webp"
-                            alt=":A project about making engaging video content for children.">
+                        <img src="images/blog-2.webp" alt="">
 
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                             <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -199,11 +138,11 @@
                     </a>
 
                 </li>
-                <li>
+                <li class="items cp art">
 
                     <a href="#">
                         <h3>How we woke at War and didn’t lose our minds</h3>
-                        <img src="images/Blog_Temp.webp" alt="The story of the first New York Orchestra, anno 1972.">
+                        <img src="images/Blog_Temp.webp" alt="">
 
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                             <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -213,13 +152,13 @@
                     </a>
 
 
+
                 </li>
-                <li>
+                <li class="items int bts">
 
                     <a href="#">
                         <h3>How to make a video</h3>
-                        <img src="images/blog-4.webp"
-                            alt="Venray: Animated shorts about the problems and solutions the Venray muncipality offers.">
+                        <img src="images/blog-4.webp" alt="">
 
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                             <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -230,12 +169,11 @@
 
 
                 </li>
-                <li>
+                <li class="items howto">
 
                     <a href="#">
-                        <h3>Global Music Vault</h3>
-                        <img src="images/Global_Music_Vault.webp"
-                            alt="This is the story of the creation of the Global Music Vault, a vault designed to keep the music of the ages safe.">
+                        <h3>How animated explainer videos help your business grow?</h3>
+                        <img src="images/blog-5.webp" alt="">
 
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                             <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -246,12 +184,11 @@
 
 
                 </li>
-                <li>
+                <li class="items art inter">
 
                     <a href="#">
-                        <h3>Outdoor Clothing Brand</h3>
-                        <img src="images/Outdoor_Clothing_Brand.webp"
-                            alt="Partnership with Patagonia to bring more sustainable clothing to the attention of more people.">
+                        <h3>Top video explainer company on Clutch</h3>
+                        <img src="images/blog-6.webp" alt="Custom video vs Template video">
 
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                             <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -262,11 +199,11 @@
 
 
                 </li>
-                <li>
+                <li class="items int news vid">
 
                     <a href="#">
-                        <h3>Krock.io</h3>
-                        <img src="images/Krock_io.webp" alt="Streamline your workflow and collaboration with Krock.io.">
+                        <h3>Top video explainer company on Clutch</h3>
+                        <img src="images/blog-7.webp" alt="Custom video vs Template video">
 
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                             <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
@@ -279,7 +216,7 @@
                 <li>
 
                     <a href="#">
-                        <h3>More Projects</h3>
+                        <h3>More Blog Posts</h3>
 
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
                             <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
