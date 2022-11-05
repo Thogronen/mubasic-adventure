@@ -1,8 +1,6 @@
 /* ------------------ */
 /* || General Styling */
 /* -------------------*/
-
-
 *,
 *::after,
 *::before {
@@ -10,7 +8,6 @@
 	margin: 0;
 	padding: 0;
 }
-
 
 button,
 summary {
@@ -24,48 +21,31 @@ summary {
 	font-weight: 100 900;
 }
 
-
 :root {
-	/* Normal text   */
+	/* Normal text */
 	--color-text: #000000;
-
-	/* Default background color   */
+	/* Default background color */
 	--color-background: #fff;
-
-	/*  Used for current Page active link color (in menu bar, both collapsed and open)  */
+	/* Used for current Page active link color (in menu bar, both collapsed and open) */
 	--color-active: hsl(260, 38%, 22%);
-
-	/*  Default COLORED background color   */
-	--main-color:
-		hsl(260, 38%, 42%);
-
-	/*  Background-color for on-hover/focus cards */
-	--main-color-dark-hover:
-		hsl(260, 38%, 1%);
-
-
-	/*  Coloring for footer and menu a:hover  */
-	--main-color-light:
-		hsl(263, 28%, 85%);
-
-	/* Only used for header banner h2   */
+	/* Default COLORED background color */
+	--main-color: hsl(260, 38%, 42%);
+	/* Background-color for on-hover/focus cards */
+	--main-color-dark-hover: hsl(260, 38%, 1%);
+	/* Coloring for footer and menu a:hover */
+	--main-color-light: hsl(263, 28%, 85%);
+	/* Only used for header banner h2 */
 	--color-reverse-text: #fff;
-
 	--font-base: 400;
 	--font-header: 900;
-
-	--default-font-var:
-		"wgth" 400;
-
+	--default-font-var: "wgth" 400;
 }
 
 body {
 	font-size: 1.125rem;
 	position: relative;
-
 	min-width: 360px;
 }
-
 
 h1,
 h2,
@@ -82,13 +62,11 @@ h3 {
 	color: var(--color-reverse-text);
 }
 
-
 p {
 	font-family: Archivo, sans-serif;
 	font-size: 1.8em;
 	font-weight: var(--font-base);
 }
-
 
 hr {
 	height: 1px;
@@ -96,11 +74,7 @@ hr {
 	border-top: 3px black solid;
 }
 
-
-
-
 /* Link effects */
-
 :visited {}
 
 :hover {}
@@ -132,16 +106,9 @@ button:active {
 	text-decoration: var(--main-color) 3px solid underline;
 }
 
-
-
-
-
-
-
 /* ------------ */
 /* || Utilities */
 /* -------------*/
-
 ul {
 	list-style: none;
 }
@@ -171,18 +138,9 @@ img {
 	display: none;
 }
 
-
-
-
-
-
-
-
-
 /* ----------- */
 /* || Sitewide */
 /* ------------*/
-
 header nav,
 footer nav,
 h2:first-of-type {
@@ -195,18 +153,9 @@ h2:first-of-type {
 	color: var(--color-reverse-text);
 }
 
-
-
-
-
-
-
-
-
 /* ------------- */
 /* || Navigation */
 /* ------------- */
-
 .menuContent {
 	/* make visible */
 	opacity: 1;
@@ -218,16 +167,11 @@ h2:first-of-type {
 }
 
 .noScroll {
-	/* Prevent scrolling while the menu is open   */
+	/* Prevent scrolling while the menu is open */
 	overflow-y: hidden;
 }
 
-
-
-
-
 /* || Header */
-
 header {
 	/* positioning */
 	position: sticky;
@@ -235,11 +179,9 @@ header {
 	z-index: 2;
 }
 
-
 header>ul {
 	display: flex;
 	justify-content: center;
-
 	height: 3.5rem;
 	background-color: var(--color-background);
 }
@@ -248,28 +190,26 @@ header>ul>li {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-
 	/* positioning */
 	position: sticky;
 	top: 0;
 	z-index: 1;
-
 	/* desktop padding */
 	padding-left: 3rem;
 	padding-right: 3rem;
-
 	/* max width for menu content */
 	max-width: 1536px;
 	/* Make the menu actually use the max-width*/
 	width: 100%;
-
 }
 
 header nav ul {
 	display: flex;
-	/* justify-content: space-between; */
+	/* justify-content: space-between;
+     */
 	align-items: center;
-	/* background-color: #fff; */
+	/* background-color: #fff;
+     */
 }
 
 header ul li>a,
@@ -293,12 +233,7 @@ header nav ul li:last-child a {
 	display: none;
 }
 
-
-
-
-
 /* || Button */
-
 span:first-of-type,
 span:last-of-type {
 	top: 0px;
@@ -314,17 +249,13 @@ button {
 button span {
 	width: 1.5rem;
 	height: 0.2rem;
-
 	margin-bottom: 0.3rem;
-
 	/* for menu btn styling */
 	position: relative;
 	display: block;
-
 	/* button styling */
 	background-color: var(--color-text);
 	border-radius: 16px;
-
 	transition: all 0.2s ease 0s;
 	animation-direction: alternate;
 }
@@ -334,12 +265,7 @@ header button {
 	display: none;
 }
 
-
-
-
-
 /* || Button active styling */
-
 .menuBtnOpenState span {
 	background-color: var(--color-background);
 }
@@ -359,12 +285,7 @@ header button {
 	transform: rotate(45deg);
 }
 
-
-
-
-
 /* || Main Menu Navigation Item States */
-
 header nav ul li:first-child a.menuContent,
 header nav ul li:last-child a.menuContent {
 	/* make the first and last item visible when .menuContent is applied*/
@@ -376,45 +297,28 @@ span.menuContent {
 	background-color: var(--color-reverse-text);
 }
 
-
-
-
-
-
-
-
-
 /* ------------ */
 /* || Main Page */
 /* -------------*/
-
-
 header>div,
 main> :not(section:first-of-type),
 footer {
-
 	/* ... */
-
 	/* || Positioning */
 	padding-left: 6rem;
 	padding-right: 6rem;
 }
 
-
 /* || Video Reel */
-
 main section:first-of-type {
 	/* || Positioning */
 	position: relative;
-
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-
 	text-align: center;
 	/* container */
 	width: 100%;
-
 	/* Page specific, change for other pages. Header is 3.5rem tall. */
 	height: calc(100vh - 3.5rem);
 }
@@ -425,7 +329,6 @@ main section:first-of-type svg {
 	height: 2em;
 	align-self: center;
 	bottom: 2em;
-
 	fill: var(--color-background);
 }
 
@@ -433,7 +336,6 @@ main section:nth-of-type(1) svg:hover {
 	/* down arrow in hero */
 	fill: var(--main-color);
 	transition-duration: 0.5s;
-
 	animation-name: bouncyArrow;
 	animation-duration: 1s;
 	animation-iteration-count: infinite;
@@ -441,7 +343,6 @@ main section:nth-of-type(1) svg:hover {
 }
 
 /* Keyframes */
-
 @keyframes bouncyArrow {
 	0% {
 		transform: translateY(0rem);
@@ -466,27 +367,16 @@ main section:first-of-type video {
 main section:first-of-type h2 {
 	position: absolute;
 	font-variation-settings: "wght" 900;
-
 	margin-left: 2rem;
 	margin-right: 2rem;
-
 	/* Center */
 	left: 0;
 	right: 0;
 }
 
-
-
-
-
-
-
-
-
 /* ----------- */
 /* || Projects */
 /* ----------- */
-
 main section:nth-of-type(2) {
 	padding-top: 10rem;
 }
@@ -494,22 +384,17 @@ main section:nth-of-type(2) {
 main section:nth-of-type(2) {
 	display: grid;
 	grid-template-columns: 1fr auto 1fr;
-
-	/* or  */
-
+	/* or */
 	display: flex;
 	justify-content: center;
 }
 
-
 /* ul */
-
 main section:nth-of-type(2) ul {
 	/* Projects */
 	display: grid;
 	grid-template-columns: repeat(12, 1fr);
 	grid-gap: 0.8rem;
-
 	padding-top: 5rem;
 	padding-bottom: 5rem;
 }
@@ -534,14 +419,11 @@ section:nth-of-type(2) ul li:nth-child(7) {
 main section:nth-of-type(2) ul {
 	grid-column-start: 2;
 	grid-column-end: 3;
-
 	/* set max widths! */
 	max-width: 1536px;
 }
 
-
 /* li */
-
 main section:nth-of-type(2) li h3,
 main section:nth-of-type(2)>li a svg {
 	opacity: 0;
@@ -552,9 +434,7 @@ main section:nth-of-type(2)>li {
 	gap: 1rem;
 }
 
-
-/* li a  */
-
+/* li a */
 main section:nth-of-type(2) li a h3 {
 	position: absolute;
 	padding: 2rem;
@@ -566,15 +446,15 @@ main section:nth-of-type(2) li a:first-child {
 	display: flex;
 	flex-wrap: wrap;
 	width: 100%;
-
 	/* set height for the articles so they all have the same height :) */
-	/* height: 500px; */
+	/* height: 500px;
+     */
 	height: 31.25rem;
 }
 
 main section:nth-of-type(2) li a {
 	position: relative;
-	/* stop scaling overflow   */
+	/* stop scaling overflow */
 	overflow: hidden;
 }
 
@@ -582,7 +462,6 @@ main section:nth-of-type(2) li a img {
 	/* Set w+h to 100*/
 	width: 100%;
 	height: 100%;
-
 	/* then shrink/stretch to fit */
 	object-fit: cover;
 }
@@ -591,9 +470,7 @@ main section:nth-of-type(2) li a:last-of-type svg {
 	/* chevron-right */
 	height: 1em;
 	position: absolute;
-
 	fill: none;
-
 	right: 2rem;
 	bottom: 2rem;
 }
@@ -602,10 +479,7 @@ main section:nth-of-type(2) li:last-child a svg {
 	fill: var(--color-text);
 }
 
-
-
 /* last list item */
-
 main section:nth-of-type(2) li:last-child h3 {
 	text-transform: uppercase;
 	color: var(--color-text);
@@ -616,19 +490,13 @@ main section:nth-of-type(2) li:last-child a:first-child:last-of-type {
 	background-color: var(--main-color-light);
 }
 
-
-
-
-
 /* || Project - Effects */
-
 main li:hover a:first-child img {
 	/* scale image within container */
 	opacity: 30%;
 	transition-duration: 0.7s;
 	transform: scale(110%);
 	position: absolute;
-
 }
 
 main section:nth-of-type(2) li:hover a:last-of-type svg {
@@ -648,7 +516,6 @@ main section:nth-of-type(2) li a:first-child:last-of-type:hover {
 	/* set default background color on hover */
 	background-color: var(--main-color-dark-hover);
 	color: var(--main-color);
-
 }
 
 main section:nth-of-type(2) li:last-child a:first-child:last-of-type:hover {
@@ -660,30 +527,17 @@ main section:nth-of-type(2) li:last-child a:first-child:last-of-type:hover h3 {
 	color: var(--color-reverse-text);
 }
 
-
-
-
-
-
-
-
-
-
 /* ---------- */
 /* || Contact */
 /* ---------- */
-
-
 section:nth-of-type(3) a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
 	margin: 10rem 0;
 	padding-bottom: 1em;
 	padding-top: 1em;
 }
-
 
 section:nth-of-type(3) a p {
 	font-size: 6em;
@@ -692,24 +546,13 @@ section:nth-of-type(3) a p {
 	text-transform: uppercase;
 }
 
-
 section:nth-of-type(3) span {
 	color: var(--main-color);
 }
 
-
-
-
-
-
-
-
-
-
 /* --------- */
 /* || Footer */
 /* --------- */
-
 footer {
 	background-color: var(--main-color-light);
 	padding-top: 2em;
@@ -717,7 +560,6 @@ footer {
 }
 
 /* || Contact info */
-
 footer address {
 	/* first contact section*/
 	display: flex;
@@ -729,7 +571,6 @@ footer address ul {
 	/* ul parts of contact section */
 	display: flex;
 	flex-direction: column;
-
 }
 
 footer address ul li {
@@ -760,9 +601,7 @@ footer div p {
 	align-self: flex-end;
 }
 
-
 /* || Footer main nav */
-
 footer>section>nav {
 	margin-top: 2rem;
 }
@@ -774,34 +613,21 @@ footer nav ul {
 	gap: 2rem;
 	flex-wrap: wrap;
 	justify-content: flex-start;
-
-
 }
 
-
-
-
-
 /* || Footer social nav */
-
 footer section,
 footer nav:last-child ul {
 	padding: 0.6em 0;
 }
 
-
-
 /* || Footer hr */
-
 footer hr {
 	margin-top: 2rem;
 	margin-bottom: 2rem;
 }
 
-
-
 /* Under the cut */
-
 footer section div {
 	display: flex;
 	justify-content: space-between;
@@ -810,35 +636,23 @@ footer section div {
 footer section div p {
 	max-width: 50vw;
 	margin-right: 2rem;
+	order: -1;
 }
 
 footer nav:last-child ul {
 	/* second footer nav */
 	flex-direction: row-reverse;
-
 }
-
 
 footer div p {
 	/* Copyright */
 	align-self: flex-end;
 	font-weight: 600;
-
 	line-height: 1.2rem;
-
 }
-
-
-
-
-
-
-
-
 
 /* Media Queries */
 /* *sighs* */
-
 @media screen and (min-width: 1024px) {}
 
 @media screen and (min-width: 425px) {}
@@ -846,7 +660,6 @@ footer div p {
 @media screen and (max-width: 1024px) {
 
 	/* || root */
-
 	h1 {
 		font-size: 2.5em;
 	}
@@ -860,7 +673,6 @@ footer div p {
 	}
 
 	/* || site-wide */
-
 	main> :not(section:first-of-type),
 	footer {
 		/* reduce padding to 1.8rem */
@@ -878,9 +690,7 @@ footer div p {
 		font-size: 2rem;
 	}
 
-
 	/* || Header / nav */
-
 	header button {
 		/* show button on small screens*/
 		display: block;
@@ -891,40 +701,32 @@ footer div p {
 		display: none;
 		/* show two extra menu items on small screen */
 		opacity: 0;
-
 		position: fixed;
-
 		display: flex;
 		/* Vertical */
 		align-items: center;
 		/* Horizontal */
 		justify-content: center;
 		background-color: var(--main-color);
-
 		/* fill entire screen */
 		top: 0;
 		left: 0;
 		height: 100vh;
 		width: 100vw;
-
 		/* z-index */
 		z-index: 100;
-
 		/* animation */
 		transition-duration: 0.5s;
-
 		/* new */
 		pointer-events: none;
 	}
 
 	header nav ul {
 		flex-direction: column;
-
 		gap: 2.3rem;
 		font-variation-settings: "wght" 900;
 		font-size: 1.875rem;
 		line-height: 1.25rem;
-
 		padding-top: 3rem;
 	}
 
@@ -943,7 +745,6 @@ footer div p {
 
 	nav a {
 		transition-duration: 0.5s;
-
 	}
 
 	header nav a:active,
@@ -952,33 +753,25 @@ footer div p {
 		text-decoration: underline;
 	}
 
-	/* header nav a:not(.activePage):hover,
-	header nav a:not(.activePage):active {
-		color: var(--main-color-light);
-	} */
-
-
-
-
-
+	/* header nav a:not(.activePage):hover, header nav a:not(.activePage):active {
+         color: var(--main-color-light);
+    }
+     */
 	/* Projects */
-
 	section:nth-of-type(2) ul li {
 		/* Added margin as gap doesn't work now */
 		margin: 0.7rem 0;
 	}
 }
 
-
 @media screen and (max-width: 425px) {
-	/* large mobile and smaller */
 
+	/* large mobile and smaller */
 	h3 {
 		font-size: 1.875rem;
 	}
 
 	/* Footer */
-
 	footer address {
 		display: flex;
 		flex-direction: column;

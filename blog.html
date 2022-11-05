@@ -11,6 +11,10 @@
 	> Changed the footer structure - should hopefully be semantically OK now
 	> Fixed focus/hover/active states for the most part
 
+    >> 4/11/22 >>
+
+    > Completed the second page (just missing active states for the selectors for now)
+    > 
 
     > Added a few more text styles
 
@@ -20,7 +24,6 @@
 	> Media Queries for different sizes
 	> Check for accessibility
     > active states for categories/blogs
-    > text-overflow for long text
     > alt texts
 
 	? Margin on menu
@@ -93,7 +96,7 @@
         </section>
 
         <section>
-            <h2 class=" visually-hidden">Blog Items</h2>
+            <h2 class="visually-hidden">Blog Items</h2>
             <!-- section 2 - blog items -->
 
             <ul>
@@ -255,7 +258,7 @@
                         <i class="fa-solid fa-phone"></i> Book a call</a>
                 </li>
                 <li>
-                    <a href="mailto:hello@hound-studio.com"><i class="fa-solid fa-envelope"></i>
+                    <a aria-label="e-mail" href="mailto:hello@hound-studio.com"><i class="fa-solid fa-envelope"></i>
                         hello@hound-studio.com</a>
                 </li>
             </ul>
@@ -295,8 +298,6 @@
             <hr>
 
             <div>
-                <!-- Copyright -->
-                <p>Thogronen @ 2022. Lots of lightbulbs were replaced during the making of this website.</p>
                 <!-- Socials -->
                 <nav aria-label="Social Media">
                     <ul>
@@ -308,6 +309,8 @@
                         <li><a href="#">Be</a></li>
                     </ul>
                 </nav>
+                <!-- Copyright -->
+                <p>Thogronen @ 2022. Lots of lightbulbs were replaced during the making of this website.</p>
             </div>
 
         </section>
