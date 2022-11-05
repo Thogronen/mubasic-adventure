@@ -250,7 +250,19 @@ Lijst met je bevindingen die in de test naar voren kwamen (geef ook aan wat er v
 
 #### Screenreader
 
-Hier korte omschrijving (met indien nodig afbeeldingen)
+De screenreader is af en toe niet duidelijk over wat wat is. Met wat extra ARIA roles komen we er wel.
+
+```    <!-- Socials -->
+    <nav aria-label="Social Media">
+     <ul>
+      <li><a href="#">Vimeo</a></li>
+      <li><a aria-label="Instagram" href="#">Instg</a></li>
+      <li><a aria-label="Dribble" href="#">Drbl</a></li>
+      <li><a aria-label="Facebook" href="#">Fb</a></li>
+      <li><a aria-label="YouTube" href="#">Yt</a></li>
+      <li><a aria-label="Behance" href="#">Be</a></li>
+     </ul>
+    </nav>``` 
 
 Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
 

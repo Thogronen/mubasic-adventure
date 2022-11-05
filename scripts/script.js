@@ -1,5 +1,5 @@
 // JavaScript Document
-console.log("This website is a copy of hound-studio.com as part of an assignment. All rights go to the original owner.");
+console.log("This website is a partial copy of hound-studio.com as part of an assignment. All rights go to the original owner.");
 
 
 var button = document.querySelector('button');
