@@ -321,6 +321,7 @@ main section:first-of-type {
 	width: 100%;
 	/* Page specific, change for other pages. Header is 3.5rem tall. */
 	height: calc(100vh - 3.5rem);
+	background: var(--main-color);
 }
 
 main section:first-of-type svg {

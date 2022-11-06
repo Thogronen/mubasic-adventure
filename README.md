@@ -1,18 +1,9 @@
+
 # Procesverslag
-
-Markdown is een simpele manier om HTML te schrijven.
-
-Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
-
-Nb. De standaardstructuur en de spartaanse opmaak van de README.md zijn helemaal prima. Het gaat om de inhoud van je procesverslag. Besteedt de tijd voor pracht en praal aan je website.
-
-Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard open zetten. Fijn om dat steeds voor de relevante stuk(ken) te doen.
 
 ## Jij
 
 <details  open>
-
-<summary>uitwerken voor kick-off werkgroep</summary>
 
 ### Auteur
 
@@ -32,8 +23,6 @@ Responsive
 
 <details  open>
 
-<summary>uitwerken voor kick-off werkgroep</summary>
-
 ### Je opdracht
 
 [Hound Studio](https://hound-studio.com/)
@@ -46,7 +35,7 @@ Hoofdpagina
 
 #### Screenshot(s) van de tweede pagina (small screen)
 
-Josh's Adventure
+Josh Story
 
 <img  src="readme-images\JOSH-story.png"  width="375px"  alt="Josh's adventure">
 
@@ -138,9 +127,13 @@ Minder Contrast
 
 <summary>uitwerken na afloop 2e werkgroep</summary>
 
-### de hele pagina
+### Hoofdpagine
 
 <img  src="readme-images/HOUND-main_breakdown.svg"  width="375px"  alt="breakdown van de hele pagina">
+
+### Blog
+
+<img  src="readme-images/Blog_Breakdown.png"  width="375px"  alt="breakdown van de hele pagina">
 
 ### dynamisch deel (bijv menu)
 
@@ -211,10 +204,15 @@ Nog te doen:
 samen met je groepje opstellen
 
 | **Niga** | **Kim** | **Alexander** | **Thomas** | **Ralph** |
+
 | --- | --- | --- | --- | --- |
+
 | HTML Structuur | HTML Structuur | HTML Structuur | HTML Structuur | HTML Structuur |
+
 | Menu how-to | Menu how-to | Image Slidehow | Paginakeuze | Menu how-to |
-|  | |  | Link/A sizing (grid?) | |
+
+| | | | Link/A sizing (grid?) | |
+
 | | | | Accessibility | |
 
 ### Verslag van meeting
@@ -232,6 +230,7 @@ samen met je groepje opstellen
 - Div gebruik (eigenlijk alleen bij het groeperen van elementen)
 
 - Span liever alleen voor content die je niet wil laten zien maar wel wilt laten lezen door een screenreader, eg:
+
 ``'Read more <span> about me </span>`` met class ``visually-hidden`` op de ``span``.
 
 - Geleerd: ``background-color: #fff9`` heeft een opacity van 90%.
@@ -252,37 +251,63 @@ Lijst met je bevindingen die in de test naar voren kwamen (geef ook aan wat er v
 
 De screenreader is af en toe niet duidelijk over wat wat is. Met wat extra ARIA roles komen we er wel.
 
-```    <!-- Socials -->
-    <nav aria-label="Social Media">
-     <ul>
-      <li><a href="#">Vimeo</a></li>
-      <li><a aria-label="Instagram" href="#">Instg</a></li>
-      <li><a aria-label="Dribble" href="#">Drbl</a></li>
-      <li><a aria-label="Facebook" href="#">Fb</a></li>
-      <li><a aria-label="YouTube" href="#">Yt</a></li>
-      <li><a aria-label="Behance" href="#">Be</a></li>
-     </ul>
-    </nav>``` 
+``` <!-- Socials -->
 
-Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+<nav aria-label="Social Media">
+
+<ul>
+
+<li><a href="#">Vimeo</a></li>
+
+<li><a aria-label="Instagram" href="#">Instg</a></li>
+
+<li><a aria-label="Dribble" href="#">Drbl</a></li>
+
+<li><a aria-label="Facebook" href="#">Fb</a></li>
+
+<li><a aria-label="YouTube" href="#">Yt</a></li>
+
+<li><a aria-label="Behance" href="#">Be</a></li>
+
+</ul>
+
+</nav> 
+```
 
 #### Muis en Toetsenbord
 
-Hier korte omschrijving (met indien nodig afbeeldingen)
+Narrator werkt voor zover getest prima (geen gekke dingen). Het is een hele verbetering tov de originele website - ik kan nu bijvoorbeeld zien welk element ik op :active heb.
 
-Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+<img src="readme-images/active_improvement.png"  width="375px"  alt="active item selected">
+
+Het enige waar ik een beetje mee zit is het menu en de twee onzichtbare items.
 
 #### Motoriek (shocks, elastiekjes)
 
-Hier korte omschrijving (met indien nodig afbeeldingen)
+Buttons en links zijn lang en breed genoeg (iig 44x44 px ruim) om zonder moeite aangeklikt te kunnen worden.  
+
+<img src="readme-images/button_with_padding.png"  width="375px"  alt="padding bij buttons">
 
 Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
 
 #### Visueel (brillen, contrast, kleurenblind, dark/light)
 
-Hier korte omschrijving (met indien nodig afbeeldingen)
+Blurred
+ <img src="readme-images/blurred_2.png"  width="375px"  alt="blurred vision">
 
-Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+No Reds
+ <img src="readme-images/no_red.png"  width="375px"  alt="No red">
+
+No Blues
+ <img src="readme-images/deuteranopia_2.png"  width="375px"  alt="no blue">
+
+ No Greens
+ <img src="readme-images/Tritanopia_2.png"  width="375px"  alt="no greens">
+
+Grays
+ <img src="readme-images/no_color_2.png"  width="375px"  alt="just grays">
+
+Er zijn eigenlijk weinig problemen - wel is het handig om bewust te zijn van het verminderde contrast als blauw meer prominent is.
 
 </details>
 
@@ -298,29 +323,21 @@ hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je we
 
 ### Agenda voor meeting
 
-samen met je groepje opstellen
-
-| student 1 | student 2 | student 3 | student 4 |
-
-| --- | --- | --- | --- |
-
-| dit bespreken | en dit | en ik dit | en dan ik dat |
-
-| en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-
-| ... | ... | ... | ... |
-
+| Kim  | Thomas  | Niga  | Alexander  |  
+| ---  | ---  | ---  | ---  |  
+| ontwerp menu | javascript, content toevoegen menu  | Menu uitklappen  | en dan ik dat  |  
+| tekst en afbeelding | artikelen filteren | er gebeurt niks in met css | Javascript zeker |  
+| ...  | ...  | ...  | ...  |
+  
 ### Verslag van meeting
 
-hier na afloop snel de uitkomsten van de meeting vastleggen
-
-- punt 1
-
-- punt 2
-
-- nog een punt
-
-- ...
+- Maken van de Blog breakdown
+- Kleine fixes qua padding/margin die eerst wel klopten maar nu toch niet meer
+- z-index shenenigans & combineren met pointer-events =]
+- Fix (?) lijstje in footers (Sanne: ff onder elkaar)
+- Geen li+article voor main, alleen li
+- ARIA labels bij meer onconventionele menu's
+- Werken aan active/hover states  
 
 </details>
 
@@ -328,33 +345,34 @@ hier na afloop snel de uitkomsten van de meeting vastleggen
 
 <details>
 
-<summary>uitwerken voor eindgesprek</summary>
+<summary>
+Be all end all, ik ben wel redelijk tevreden met het product wat er nu staat. Er zijn altijd wel dingen op te merken, maar er was simpelweg geen tijd om alles te kunnen doen.
+</summary>
 
 ### Je uitkomst - karakteristiek screenshots
 
-<img  src="readme-images/dummy-plaatje.jpg"  width="375px"  alt="uitomst opdracht 1">
-
 ### Dit ging goed/Heb ik geleerd
 
-Korte omschrijving met plaatjes
+- Het zo simpel mogelijk houden van de code zolang dat te doen was.
+- Grid beter leren gebruiken.
+- ARIA toe te passen.
 
-<img  src="readme-images/dummy-plaatje.jpg"  width="375px"  alt="top">
+Hoofdpagina
+<img src="readme-images/Hound_Final_Main" width="375px" alt="Hoofdpagina">
+
+Blog
+<img src="readme-images/Hound_Final_Blog" width="375px" alt="Blog">
 
 ### Dit was lastig/Is niet gelukt
 
-Korte omschrijving met plaatjes
-
-<img  src="readme-images/dummy-plaatje.jpg"  width="375px"  alt="bummer">
+- Enkele JS elementen; bijvoorbeeld de ``activeClass`` class wisselen tussen de actieve selectors.
+- Niet meer toegekomen aan de cursor / mix-blend voor leuke effecten.
 
 </details>
 
 ## Bronnenlijst
 
-<details  open>
-
-<summary>continu bijhouden terwijl je werkt</summary>
-
-Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
+<details open>
 
 1. [A11y Project Checklist](https://www.a11yproject.com/checklist/)
 
@@ -367,5 +385,6 @@ Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
 5. [FontAwesome Animating Icons](https://fontawesome.com/docs/web/style/animate)
 
 6. [CSS Selector Specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity)
-  
+7. [Hulp bij het schrijven van Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
 </details>
