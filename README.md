@@ -204,15 +204,10 @@ Nog te doen:
 samen met je groepje opstellen
 
 | **Niga** | **Kim** | **Alexander** | **Thomas** | **Ralph** |
-
 | --- | --- | --- | --- | --- |
-
 | HTML Structuur | HTML Structuur | HTML Structuur | HTML Structuur | HTML Structuur |
-
 | Menu how-to | Menu how-to | Image Slidehow | Paginakeuze | Menu how-to |
-
 | | | | Link/A sizing (grid?) | |
-
 | | | | Accessibility | |
 
 ### Verslag van meeting
@@ -358,10 +353,10 @@ Be all end all, ik ben wel redelijk tevreden met het product wat er nu staat. Er
 - ARIA toe te passen.
 
 Hoofdpagina
-<img src="readme-images/Hound_Final_Main" width="375px" alt="Hoofdpagina">
+<img src="readme-images/Hound_Final_Main.png" width="375px" alt="Hoofdpagina">
 
 Blog
-<img src="readme-images/Hound_Final_Blog" width="375px" alt="Blog">
+<img src="readme-images/Hound_Final_Blog.png" width="375px" alt="Blog">
 
 ### Dit was lastig/Is niet gelukt
 
